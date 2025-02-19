@@ -5,24 +5,27 @@ public class Heart : MonoBehaviour
 {
     public AnimationCurve curve;
     Renderer rend;
-    Material material;
+    [SerializeField] Material material;
+
     void Start()
     {
-        if (Shader.Find("Heart") == null){
+        if (material == null)
+        {
             Debug.LogWarning("NULL");
         }
-        else {
-        material = new Material(Shader.Find("Heart"));
+        else
+        {
+
+            //rend = GetComponent<Renderer>();
+            //rend.material.shader = material;
         }
-        //rend = GetComponent<Renderer>();
-        //rend.material.shader = Shader.Find("Heart");
     }
 
     void Update()
     {
         //transform.localScale = new Vector3(transform.localScale.x, curve.Evaluate(Time.time), transform.localScale.z);
 
-        //GetComponent<Renderer>().material = material;
-        //material.SetFloat("_heartbeat", 0);
+        material = GetComponent<Renderer>().material;
+        material.SetFloat("_heartbeat", curve.Evaluate(Time.time));
     }
 }
