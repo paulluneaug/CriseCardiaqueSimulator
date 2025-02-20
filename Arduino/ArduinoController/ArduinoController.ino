@@ -91,7 +91,7 @@ byte m_writeBuffer[BUFFER_SIZE];
 Queue m_recieveQueue;
 
 // DMX Control
-const int DMX_PIN = 0;
+const int DMX_PIN = 1;
 
 // Buttons
 const int BUTTON_0_PIN = 2;
