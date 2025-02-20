@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{F072DB1E-97E2-46D9-8E78-52C67CE6F0A5}" SchemaVersion="119">
+	<GameParameters>
+		<WorkUnit Name="Default Work Unit" ID="{F072DB1E-97E2-46D9-8E78-52C67CE6F0A5}" PersistMode="Standalone">
+			<ChildrenList>
+				<GameParameter Name="RTPC_button_meter_duck" ID="{C2912E37-C771-4983-854D-121E38D4E3ED}">
+					<PropertyList>
+						<Property Name="InitialValue" Type="Real64" Value="-48"/>
+						<Property Name="Max" Type="Real64" Value="0"/>
+						<Property Name="Min" Type="Real64" Value="-48"/>
+					</PropertyList>
+				</GameParameter>
+				<GameParameter Name="RTPC_heartbeat_bpm" ID="{1F9B0F98-A1E1-4B9F-AA29-5E9A180905D0}">
+					<PropertyList>
+						<Property Name="InitialValue" Type="Real64" Value="80"/>
+						<Property Name="Max" Type="Real64" Value="200"/>
+					</PropertyList>
+				</GameParameter>
+			</ChildrenList>
+		</WorkUnit>
+	</GameParameters>
+</WwiseDocument>

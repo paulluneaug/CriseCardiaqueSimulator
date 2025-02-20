@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="16" SoundBankVersion="150">
+	<RootPaths>
+		<ProjectRoot>../..</ProjectRoot>
+		<SourceFilesRoot>../../.cache/Windows</SourceFilesRoot>
+		<SoundBanksRoot>.</SoundBanksRoot>
+		<ExternalSourcesInputFile></ExternalSourcesInputFile>
+		<ExternalSourcesOutputRoot>.</ExternalSourcesOutputRoot>
+	</RootPaths>
+	<DialogueEvents/>
+	<SoundBanks>
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{9DA67A18-5BF9-D131-C4ED-103D003B4C8B}">
+			<ShortName>Init</ShortName>
+			<Path>Init.bnk</Path>
+			<Plugins>
+				<AudioDevices>
+					<Plugin Id="2317455096" Name="No_Output" LibName="No Output" LibId="11862023"/>
+					<Plugin Id="3859886410" Name="System" LibName="System" LibId="11403271"/>
+				</AudioDevices>
+			</Plugins>
+			<Busses>
+				<Bus Id="3803692087" Name="Master Audio Bus"/>
+			</Busses>
+			<GameParameters>
+				<GameParameter Id="1409130199" Name="RTPC_heartbeat_bpm"/>
+				<GameParameter Id="2951868199" Name="RTPC_button_meter_duck"/>
+			</GameParameters>
+			<SwitchGroups>
+				<SwitchGroup Id="4091656514" Name="gamestate">
+					<Switches>
+						<Switch Id="702482391" Name="game"/>
+						<Switch Id="1125500713" Name="intro"/>
+						<Switch Id="4158285989" Name="gameover"/>
+					</Switches>
+				</SwitchGroup>
+			</SwitchGroups>
+		</SoundBank>
+		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{83B48D75-C2F7-CBA9-A417-9A2343182E9F}">
+			<ShortName>main</ShortName>
+			<Path>main.bnk</Path>
+			<Media>
+				<File Id="181377064" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>button1 [2025-02-20 160300].wav</ShortName>
+					<CachePath>SFX/button1 [2025-02-20 160300]_818F3B66.wem</CachePath>
+				</File>
+				<File Id="267548320" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>beat out-glued.wav</ShortName>
+					<CachePath>SFX/beat out-glued_B619FD06.wem</CachePath>
+				</File>
+				<File Id="544525533" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>button2 [2025-02-20 160302].wav</ShortName>
+					<CachePath>SFX/button2 [2025-02-20 160302]_1581C8CA.wem</CachePath>
+				</File>
+				<File Id="747798513" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>start [2025-02-20 160256].wav</ShortName>
+					<CachePath>SFX/start [2025-02-20 160256]_231FCA4C.wem</CachePath>
+				</File>
+				<File Id="937410076" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Heart Attack Simulator - 175.wav</ShortName>
+					<CachePath>SFX/Heart Attack Simulator - 175_FBC78EF0.wem</CachePath>
+				</File>
+				<File Id="982833217" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>beat in-glued.wav</ShortName>
+					<CachePath>SFX/beat in-glued_F21BDA8C.wem</CachePath>
+				</File>
+				<File Id="1056423675" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>END2 [2025-02-20 170655].wav</ShortName>
+					<CachePath>SFX/END2 [2025-02-20 170655]_FBC78EF0.wem</CachePath>
+				</File>
+			</Media>
+			<Plugins>
+				<ShareSets>
+					<Plugin Id="3147646715" Name="button_Meter" LibName="Wwise Meter" LibId="8454147"/>
+				</ShareSets>
+			</Plugins>
+			<Events>
+				<Event Id="2296794010" Name="Play_button_1" DurationType="OneShot" DurationMin="2.5813334" DurationMax="2.5813334">
+					<MediaRefs>
+						<MediaRef Id="181377064"/>
+					</MediaRefs>
+					<PluginRefs>
+						<ShareSets>
+							<PluginRef Id="3147646715"/>
+						</ShareSets>
+					</PluginRefs>
+				</Event>
+				<Event Id="2296794009" Name="Play_button_2" DurationType="OneShot" DurationMin="4.5124707" DurationMax="4.5124707">
+					<MediaRefs>
+						<MediaRef Id="544525533"/>
+					</MediaRefs>
+					<PluginRefs>
+						<ShareSets>
+							<PluginRef Id="3147646715"/>
+						</ShareSets>
+					</PluginRefs>
+				</Event>
+				<Event Id="3291290705" Name="Play_init_game" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="267548320"/>
+						<MediaRef Id="937410076"/>
+						<MediaRef Id="982833217"/>
+						<MediaRef Id="1056423675"/>
+					</MediaRefs>
+					<SwitchContainers>
+						<SwitchContainer>
+							<SwitchValue GroupType="Switch" GroupId="4091656514" Id="1125500713"/>
+							<MediaRefs>
+								<MediaRef Id="937410076"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="Switch" GroupId="4091656514" Id="702482391"/>
+							<MediaRefs>
+								<MediaRef Id="937410076"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="Switch" GroupId="4091656514" Id="4158285989"/>
+							<MediaRefs>
+								<MediaRef Id="937410076"/>
+							</MediaRefs>
+						</SwitchContainer>
+					</SwitchContainers>
+					<ActionSetSwitch>
+						<ActionSetSwitchEntry GroupId="4091656514" Id="1125500713" Name="intro"/>
+					</ActionSetSwitch>
+				</Event>
+				<Event Id="1376856651" Name="Play_set_game" DurationType="OneShot" DurationMin="4.901647" DurationMax="4.901647">
+					<MediaRefs>
+						<MediaRef Id="747798513"/>
+					</MediaRefs>
+					<ActionSetSwitch>
+						<ActionSetSwitchEntry GroupId="4091656514" Id="702482391" Name="game"/>
+					</ActionSetSwitch>
+				</Event>
+				<Event Id="842556545" Name="Play_set_gameover" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0">
+					<ActionSetSwitch>
+						<ActionSetSwitchEntry GroupId="4091656514" Id="4158285989" Name="gameover"/>
+					</ActionSetSwitch>
+				</Event>
+				<Event Id="3245586965" Name="Play_set_intro" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0">
+					<ActionSetSwitch>
+						<ActionSetSwitchEntry GroupId="4091656514" Id="1125500713" Name="intro"/>
+					</ActionSetSwitch>
+				</Event>
+			</Events>
+			<GameParameters>
+				<GameParameter Id="1409130199" Name="RTPC_heartbeat_bpm"/>
+				<GameParameter Id="2951868199" Name="RTPC_button_meter_duck"/>
+			</GameParameters>
+			<SwitchGroups>
+				<SwitchGroup Id="4091656514" Name="gamestate">
+					<Switches>
+						<Switch Id="702482391" Name="game"/>
+						<Switch Id="1125500713" Name="intro"/>
+						<Switch Id="4158285989" Name="gameover"/>
+					</Switches>
+				</SwitchGroup>
+			</SwitchGroups>
+		</SoundBank>
+	</SoundBanks>
+	<FileHash>{DE4041E2-7F1E-A963-6E03-184CA5829827}</FileHash>
+</SoundBanksInfo>

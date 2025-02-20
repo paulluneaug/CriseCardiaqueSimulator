@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{2F097572-A39D-4B74-B68A-268A49D93DDA}" SchemaVersion="119">
+	<Switches>
+		<WorkUnit Name="Default Work Unit" ID="{2F097572-A39D-4B74-B68A-268A49D93DDA}" PersistMode="Standalone">
+			<ChildrenList>
+				<SwitchGroup Name="gamestate" ID="{C3CA61DD-6CB3-490F-B9E7-1D14EF2EF65C}">
+					<ChildrenList>
+						<Switch Name="intro" ID="{7D96EE97-E853-41CD-8837-9B578ABD238C}"/>
+						<Switch Name="game" ID="{226887AC-979C-454F-BECD-5D5B3D6E3C29}"/>
+						<Switch Name="gameover" ID="{7CD36DFB-FE6E-4814-BAB0-A0085F9B2DC3}"/>
+					</ChildrenList>
+				</SwitchGroup>
+			</ChildrenList>
+		</WorkUnit>
+	</Switches>
+</WwiseDocument>

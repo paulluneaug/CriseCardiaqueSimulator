@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{5E2B136C-CA8B-48A5-B4C0-979CE5D358EC}" SchemaVersion="119">
+	<Events>
+		<WorkUnit Name="Default Work Unit" ID="{5E2B136C-CA8B-48A5-B4C0-979CE5D358EC}" PersistMode="Standalone">
+			<ChildrenList>
+				<Event Name="Play_init_game" ID="{2676A18A-84FF-4121-B891-FB4B917CE4A0}">
+					<ChildrenList>
+						<Action Name="" ID="{7B7632BC-0A83-4FC5-A070-6C6157B634BB}" ShortID="78453588">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Switch" ID="{CDC8824C-5E80-4D89-9286-1295830AE89D}" WorkUnitID="{332EFC25-46F8-4577-8538-0C9278187080}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{FC0BD158-1F87-4CB7-B537-08416E7A3EC2}" ShortID="569878728">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Switch" ID="{CDC8824C-5E80-4D89-9286-1295830AE89D}" WorkUnitID="{332EFC25-46F8-4577-8538-0C9278187080}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{6201646B-7BDC-4FD2-B5CA-798BEDD4F1E2}" ShortID="436901414">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="23"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="intro" ID="{7D96EE97-E853-41CD-8837-9B578ABD238C}" WorkUnitID="{2F097572-A39D-4B74-B68A-268A49D93DDA}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{9BC5CE5E-51F3-427E-BB82-CD68F8EDB918}" ShortID="964045558">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="39"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="RTPC_heartbeat_bpm" ID="{1F9B0F98-A1E1-4B9F-AA29-5E9A180905D0}" WorkUnitID="{F072DB1E-97E2-46D9-8E78-52C67CE6F0A5}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{7985EB30-9FE9-475F-B56B-0E7BC7341FB7}" ShortID="919577834">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="heartbeat" ID="{371BD6A2-3EC4-42EA-B22F-E526153844F1}" WorkUnitID="{9564804D-62E3-4657-961D-55D35419BB6C}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_set_intro" ID="{6D23A596-40E6-4610-B9A5-B240DD06A54E}">
+					<ChildrenList>
+						<Action Name="" ID="{5B69A6CB-DB86-4112-B3FC-F61E3A6EB03E}" ShortID="735887546">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="23"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="intro" ID="{7D96EE97-E853-41CD-8837-9B578ABD238C}" WorkUnitID="{2F097572-A39D-4B74-B68A-268A49D93DDA}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_set_game" ID="{AB373C10-1EA6-46AA-B71C-D2BC66DCF8E9}">
+					<ChildrenList>
+						<Action Name="" ID="{98E4C1A7-F790-44E9-B486-6A2090D1665D}" ShortID="17963692">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="23"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="game" ID="{226887AC-979C-454F-BECD-5D5B3D6E3C29}" WorkUnitID="{2F097572-A39D-4B74-B68A-268A49D93DDA}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{BAE11469-AF33-4062-A68C-68BC671F271C}" ShortID="410443603">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="start new game" ID="{03A57EE0-E652-4760-A3BD-3FCA9BD0FEB0}" WorkUnitID="{9564804D-62E3-4657-961D-55D35419BB6C}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_set_gameover" ID="{F2B7CA39-579C-41BC-BBC8-3164BFF4E422}">
+					<ChildrenList>
+						<Action Name="" ID="{48B65FB5-ACFC-47CB-BEAE-7C5A9D9DEA15}" ShortID="1064100574">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="23"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="gameover" ID="{7CD36DFB-FE6E-4814-BAB0-A0085F9B2DC3}" WorkUnitID="{2F097572-A39D-4B74-B68A-268A49D93DDA}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_button_1" ID="{1E37B548-C151-4B4F-B2F5-BC12BAC41C6D}">
+					<ChildrenList>
+						<Action Name="" ID="{437C279C-4FD8-4045-B6B2-0096D3E8EB7F}" ShortID="855001739">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="button1" ID="{42EA95EB-9E39-4650-B194-ECC6E8BA5D4B}" WorkUnitID="{9564804D-62E3-4657-961D-55D35419BB6C}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_button_2" ID="{3DB6E45B-E974-4FCB-ADF5-510EA0961E5F}">
+					<ChildrenList>
+						<Action Name="" ID="{BD4EA581-64D9-4E0F-902D-DD82B1F9300E}" ShortID="1056922580">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="button2" ID="{47211208-0CA0-4E3C-8EBE-D88B49F9E53D}" WorkUnitID="{9564804D-62E3-4657-961D-55D35419BB6C}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_stop_all" ID="{6014AC77-3CBF-4878-ACC8-48D5BDDFC880}"/>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>

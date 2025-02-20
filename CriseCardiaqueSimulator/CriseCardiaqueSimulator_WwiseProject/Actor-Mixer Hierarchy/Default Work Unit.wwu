@@ -1,0 +1,399 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{9564804D-62E3-4657-961D-55D35419BB6C}" SchemaVersion="119">
+	<AudioObjects>
+		<WorkUnit Name="Default Work Unit" ID="{9564804D-62E3-4657-961D-55D35419BB6C}" PersistMode="Standalone">
+			<ChildrenList>
+				<Sound Name="start new game" ID="{03A57EE0-E652-4760-A3BD-3FCA9BD0FEB0}" ShortID="925167243">
+					<PropertyList>
+						<Property Name="IsGlobalLimit" Type="int16" Value="1"/>
+						<Property Name="MakeUpGain" Type="Real64">
+							<ValueList>
+								<Value>9</Value>
+							</ValueList>
+						</Property>
+						<Property Name="MaxSoundPerInstance" Type="int16">
+							<ValueList>
+								<Value>1</Value>
+							</ValueList>
+						</Property>
+						<Property Name="UseMaxSoundPerInstance" Type="bool">
+							<ValueList>
+								<Value>True</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{EFBD4D6E-1C89-4DF3-A407-EE4869BB3BA7}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{20152C59-0859-490D-9296-C884B69967F9}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="start [2025-02-20 160256]" ID="{E1E14AC5-BF28-4464-B2AB-4A2921140745}">
+							<PropertyList>
+								<Property Name="LoopBegin" Type="Real64" Value="0.389019607843137"/>
+								<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+								<Property Name="TrimBegin" Type="Real64" Value="0.389019607843137"/>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>start [2025-02-20 160256].wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="747798513"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="start [2025-02-20 160256]" ID="{E1E14AC5-BF28-4464-B2AB-4A2921140745}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<ActorMixer Name="buttons" ID="{12BCCC83-9DEB-4E4E-A28F-2BD6CA31DEC9}" ShortID="875980435">
+					<PropertyList>
+						<Property Name="MakeUpGain" Type="Real64">
+							<ValueList>
+								<Value>7</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{EFBD4D6E-1C89-4DF3-A407-EE4869BB3BA7}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{20152C59-0859-490D-9296-C884B69967F9}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="button1" ID="{42EA95EB-9E39-4650-B194-ECC6E8BA5D4B}" ShortID="791119028">
+							<PropertyList>
+								<Property Name="IsGlobalLimit" Type="int16" Value="1"/>
+								<Property Name="MaxSoundPerInstance" Type="int16">
+									<ValueList>
+										<Value>1</Value>
+									</ValueList>
+								</Property>
+								<Property Name="UseMaxSoundPerInstance" Type="bool">
+									<ValueList>
+										<Value>True</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{EFBD4D6E-1C89-4DF3-A407-EE4869BB3BA7}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{20152C59-0859-490D-9296-C884B69967F9}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="button1 [2025-02-20 160300]" ID="{267E78C1-5700-4B14-B7C4-6D8E06606A7F}">
+									<Language>SFX</Language>
+									<AudioFile>button1 [2025-02-20 160300].wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="181377064"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="button1 [2025-02-20 160300]" ID="{267E78C1-5700-4B14-B7C4-6D8E06606A7F}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="button2" ID="{47211208-0CA0-4E3C-8EBE-D88B49F9E53D}" ShortID="426403536">
+							<PropertyList>
+								<Property Name="IsGlobalLimit" Type="int16" Value="1"/>
+								<Property Name="MaxSoundPerInstance" Type="int16">
+									<ValueList>
+										<Value>1</Value>
+									</ValueList>
+								</Property>
+								<Property Name="UseMaxSoundPerInstance" Type="bool">
+									<ValueList>
+										<Value>True</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{EFBD4D6E-1C89-4DF3-A407-EE4869BB3BA7}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{20152C59-0859-490D-9296-C884B69967F9}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="button2 [2025-02-20 160302]" ID="{4CE6A10D-F76C-4B4D-94BA-6E3E4C8AAFBC}">
+									<PropertyList>
+										<Property Name="LoopBegin" Type="Real64" Value="0.244862745098039"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="0.244862745098039"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>button2 [2025-02-20 160302].wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="544525533"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="button2 [2025-02-20 160302]" ID="{4CE6A10D-F76C-4B4D-94BA-6E3E4C8AAFBC}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+					<ObjectLists>
+						<ObjectList Name="Effects">
+							<Reference>
+								<Local>
+									<EffectSlot Name="" ID="{035754E3-DB40-4A82-8A97-1F2650C019DB}" ShortID="606878145">
+										<ReferenceList>
+											<Reference Name="Effect" PluginName="Wwise Meter" CompanyID="0" PluginID="129" PluginType="3">
+												<ObjectRef Name="button_Meter" ID="{5DEB1474-8D4A-4567-A7F9-F0EE81D0C6E1}" WorkUnitID="{595D8764-231D-4DE8-AE0F-FB115DA68A54}"/>
+											</Reference>
+										</ReferenceList>
+									</EffectSlot>
+								</Local>
+							</Reference>
+						</ObjectList>
+					</ObjectLists>
+				</ActorMixer>
+				<RandomSequenceContainer Name="heartbeat" ID="{371BD6A2-3EC4-42EA-B22F-E526153844F1}" ShortID="15768101">
+					<PropertyList>
+						<Property Name="IsGlobalLimit" Type="int16" Value="1"/>
+						<Property Name="MakeUpGain" Type="Real64">
+							<ValueList>
+								<Value>7</Value>
+							</ValueList>
+						</Property>
+						<Property Name="MaxSoundPerInstance" Type="int16">
+							<ValueList>
+								<Value>1</Value>
+							</ValueList>
+						</Property>
+						<Property Name="PlayMechanismLoop" Type="bool" Value="True"/>
+						<Property Name="PlayMechanismSpecialTransitions" Type="bool" Value="True"/>
+						<Property Name="PlayMechanismSpecialTransitionsType" Type="int16" Value="3"/>
+						<Property Name="PlayMechanismSpecialTransitionsValue" Type="Real64" Value="0"/>
+						<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
+						<Property Name="RandomOrSequence" Type="int16" Value="0"/>
+						<Property Name="UseMaxSoundPerInstance" Type="bool">
+							<ValueList>
+								<Value>True</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{EFBD4D6E-1C89-4DF3-A407-EE4869BB3BA7}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{20152C59-0859-490D-9296-C884B69967F9}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="in" ID="{CF803545-234A-454E-819C-1447C76CA147}" ShortID="908700305">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{EFBD4D6E-1C89-4DF3-A407-EE4869BB3BA7}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{20152C59-0859-490D-9296-C884B69967F9}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="beat in-glued" ID="{B471F182-0AA8-4DB7-8D3C-C07FB3B1735D}">
+									<PropertyList>
+										<Property Name="FadeInDuration" Type="Real64" Value="0.116005873715125"/>
+										<Property Name="FadeOutDuration" Type="Real64" Value="0.0323054331864904"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>beat in-glued.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="982833217"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="beat in-glued" ID="{B471F182-0AA8-4DB7-8D3C-C07FB3B1735D}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="out" ID="{611492A6-0549-4C6A-9A42-651AF065120C}" ShortID="883374559">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{EFBD4D6E-1C89-4DF3-A407-EE4869BB3BA7}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{20152C59-0859-490D-9296-C884B69967F9}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="beat out-glued" ID="{06BE6437-4999-4B73-BAA3-448D8C8C9497}">
+									<PropertyList>
+										<Property Name="FadeInDuration" Type="Real64" Value="0.0770925110132159"/>
+										<Property Name="FadeOutDuration" Type="Real64" Value="0.039647577092511"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>beat out-glued.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="267548320"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ObjectLists>
+								<ObjectList Name="RTPC">
+									<Reference>
+										<Local>
+											<RTPC Name="" ID="{400B7CAC-B078-4AC6-943C-90A04DE6B49B}" ShortID="774917674">
+												<PropertyList>
+													<Property Name="PropertyName" Type="string" Value="Volume"/>
+												</PropertyList>
+												<ReferenceList>
+													<Reference Name="ControlInput">
+														<ObjectRef Name="RTPC_heartbeat_bpm" ID="{1F9B0F98-A1E1-4B9F-AA29-5E9A180905D0}" WorkUnitID="{F072DB1E-97E2-46D9-8E78-52C67CE6F0A5}"/>
+													</Reference>
+													<Reference Name="Curve">
+														<Custom>
+															<Curve Name="" ID="{7D8A2DDC-74B1-4F89-9549-83934098DD6A}">
+																<PropertyList>
+																	<Property Name="Flags" Type="int32" Value="3"/>
+																</PropertyList>
+																<PointList>
+																	<Point>
+																		<XPos>0</XPos>
+																		<YPos>0</YPos>
+																		<Flags>5</Flags>
+																	</Point>
+																	<Point>
+																		<XPos>91.8593</XPos>
+																		<YPos>0.14722</YPos>
+																		<Flags>0</Flags>
+																	</Point>
+																	<Point>
+																		<XPos>200</XPos>
+																		<YPos>-14.27637</YPos>
+																		<Flags>37</Flags>
+																	</Point>
+																</PointList>
+															</Curve>
+														</Custom>
+													</Reference>
+												</ReferenceList>
+											</RTPC>
+										</Local>
+									</Reference>
+								</ObjectList>
+							</ObjectLists>
+							<ActiveSourceList>
+								<ActiveSource Name="beat out-glued" ID="{06BE6437-4999-4B73-BAA3-448D8C8C9497}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+					<ObjectLists>
+						<ObjectList Name="Playlist">
+							<Reference>
+								<ObjectRef Name="in" ID="{CF803545-234A-454E-819C-1447C76CA147}" WorkUnitID="{9564804D-62E3-4657-961D-55D35419BB6C}"/>
+							</Reference>
+							<Reference>
+								<ObjectRef Name="out" ID="{611492A6-0549-4C6A-9A42-651AF065120C}" WorkUnitID="{9564804D-62E3-4657-961D-55D35419BB6C}"/>
+							</Reference>
+						</ObjectList>
+						<ObjectList Name="RTPC">
+							<Reference>
+								<Local>
+									<RTPC Name="" ID="{AB2C9E32-9A0B-4CCF-A427-F9A94CBD3838}" ShortID="307070576">
+										<PropertyList>
+											<Property Name="PropertyName" Type="string" Value="PlayMechanismSpecialTransitionsValue"/>
+										</PropertyList>
+										<ReferenceList>
+											<Reference Name="ControlInput">
+												<ObjectRef Name="RTPC_heartbeat_bpm" ID="{1F9B0F98-A1E1-4B9F-AA29-5E9A180905D0}" WorkUnitID="{F072DB1E-97E2-46D9-8E78-52C67CE6F0A5}"/>
+											</Reference>
+											<Reference Name="Curve">
+												<Custom>
+													<Curve Name="" ID="{0B0632B6-7AC1-407F-A8ED-5AA248B1F7E0}">
+														<PropertyList>
+															<Property Name="Flags" Type="int32" Value="1"/>
+														</PropertyList>
+														<PointList>
+															<Point>
+																<XPos>0</XPos>
+																<YPos>2</YPos>
+																<Flags>5</Flags>
+															</Point>
+															<Point>
+																<XPos>30</XPos>
+																<YPos>2</YPos>
+																<Flags>0</Flags>
+															</Point>
+															<Point>
+																<XPos>60</XPos>
+																<YPos>1</YPos>
+																<Flags>0</Flags>
+															</Point>
+															<Point>
+																<XPos>120</XPos>
+																<YPos>0.5</YPos>
+																<Flags>0</Flags>
+															</Point>
+															<Point>
+																<XPos>180</XPos>
+																<YPos>0.25</YPos>
+																<Flags>0</Flags>
+															</Point>
+															<Point>
+																<XPos>200</XPos>
+																<YPos>0.26411</YPos>
+																<Flags>37</Flags>
+															</Point>
+														</PointList>
+													</Curve>
+												</Custom>
+											</Reference>
+										</ReferenceList>
+									</RTPC>
+								</Local>
+							</Reference>
+							<Reference>
+								<Local>
+									<RTPC Name="" ID="{6E364C44-1DE8-47AD-A92B-6DFF89580977}" ShortID="528707006">
+										<PropertyList>
+											<Property Name="PropertyName" Type="string" Value="Pitch"/>
+										</PropertyList>
+										<ReferenceList>
+											<Reference Name="ControlInput">
+												<ObjectRef Name="RTPC_heartbeat_bpm" ID="{1F9B0F98-A1E1-4B9F-AA29-5E9A180905D0}" WorkUnitID="{F072DB1E-97E2-46D9-8E78-52C67CE6F0A5}"/>
+											</Reference>
+											<Reference Name="Curve">
+												<Custom>
+													<Curve Name="" ID="{3468ABE4-BD34-4D48-A8BC-23E350B9BE31}">
+														<PropertyList>
+															<Property Name="Flags" Type="int32" Value="65537"/>
+														</PropertyList>
+														<PointList>
+															<Point>
+																<XPos>0</XPos>
+																<YPos>-806</YPos>
+																<Flags>5</Flags>
+															</Point>
+															<Point>
+																<XPos>200</XPos>
+																<YPos>323</YPos>
+																<Flags>37</Flags>
+															</Point>
+														</PointList>
+													</Curve>
+												</Custom>
+											</Reference>
+										</ReferenceList>
+									</RTPC>
+								</Local>
+							</Reference>
+						</ObjectList>
+					</ObjectLists>
+				</RandomSequenceContainer>
+			</ChildrenList>
+		</WorkUnit>
+	</AudioObjects>
+</WwiseDocument>
