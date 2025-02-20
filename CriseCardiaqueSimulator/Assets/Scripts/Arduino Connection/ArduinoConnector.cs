@@ -63,7 +63,7 @@ public class ArduinoConnector
             if (readBytesCount != 0)
             {
                 //Debug.Log($"Recieved {readBytesCount} bytes");
-                OnMessageRecieved.Invoke(m_buffer, readBytesCount);
+                OnMessageRecieved?.Invoke(m_buffer, readBytesCount);
             }
             await Task.Delay(20);
         }

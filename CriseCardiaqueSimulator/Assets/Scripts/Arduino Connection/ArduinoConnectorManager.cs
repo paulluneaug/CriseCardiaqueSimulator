@@ -19,6 +19,9 @@ public class ArduinoConnectorManager : MonoBehaviour
     public bool Button0State => m_button0State;
     public bool Button1State => m_button1State;
 
+    //public event Action<bool> OnButton0StateChanged;
+    //public event Action<bool> OnButton1StateChanged;
+
     [Button(nameof(GetAvailablePorts))]
     [SerializeField] private ArduinoConnector m_arduinoConnector;
 
@@ -26,8 +29,8 @@ public class ArduinoConnectorManager : MonoBehaviour
 
     [NonSerialized] private Queue<byte> m_recievedDatas;
 
-    [SerializeField] private bool m_button0State;
-    [SerializeField] private bool m_button1State;
+    [SerializeField, Disable] private bool m_button0State;
+    [SerializeField, Disable] private bool m_button1State;
 
 
     private void Start()
@@ -103,10 +106,23 @@ public class ArduinoConnectorManager : MonoBehaviour
 
         if (buttonsState != 0)
         {
-            Debug.LogWarning($"Button values : {buttonsState}");
+            //Debug.LogWarning($"Button values : {buttonsState}");
         }
-        m_button0State = (buttonsState & (1 << BUTTON_0_OFFSET)) != 0;
-        m_button1State = (buttonsState & (1 << BUTTON_1_OFFSET)) != 0;
+
+        bool newButton0State = (buttonsState & (1 << BUTTON_0_OFFSET)) != 0;
+        bool newButton1State = (buttonsState & (1 << BUTTON_1_OFFSET)) != 0;
+
+        if (m_button0State != newButton0State)
+        {
+            m_button0State = newButton0State;
+            //OnButton0StateChanged?.Invoke(m_button0State);
+        }
+
+        if (m_button1State != newButton1State)
+        {
+            m_button1State = newButton1State;
+            //OnButton1StateChanged?.Invoke(m_button1State);
+        }
 
         return true; // The command was processed and removed from the queue
     }
