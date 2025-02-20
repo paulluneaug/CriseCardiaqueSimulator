@@ -1,7 +1,9 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO.Ports;
 using UnityEngine;
+using UnityUtility.CustomAttributes;
 
 public class ArduinoConnectorManager : MonoBehaviour
 {
@@ -17,6 +19,7 @@ public class ArduinoConnectorManager : MonoBehaviour
     public bool Button0State => m_button0State;
     public bool Button1State => m_button1State;
 
+    [Button(nameof(GetAvailablePorts))]
     [SerializeField] private ArduinoConnector m_arduinoConnector;
 
     [SerializeField] private byte m_value;
@@ -133,6 +136,15 @@ public class ArduinoConnectorManager : MonoBehaviour
     private void SendCommandDimmer()
     {
         SendDMXCommand(DMXChannelsGlossary.LIGHT_DIMMER_CHANNEL, m_value);
+    }
+
+    private void GetAvailablePorts()
+    {
+        Debug.Log("Available Ports :");
+        foreach (string portName in SerialPort.GetPortNames())
+        {
+            Debug.Log($"- {portName}");
+        }
     }
 
 }

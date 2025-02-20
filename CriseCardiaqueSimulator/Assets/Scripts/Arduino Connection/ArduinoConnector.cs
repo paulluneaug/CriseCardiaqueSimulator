@@ -19,11 +19,6 @@ public class ArduinoConnector
 
     public void Init()
     {
-        foreach (string s in SerialPort.GetPortNames())
-        {
-            Debug.Log($"   {s}");
-        }
-
         m_buffer = new byte[BUFFER_SIZE];
 
         m_serialPort = new SerialPort(m_port, m_baud);
