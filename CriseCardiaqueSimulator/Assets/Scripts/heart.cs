@@ -15,17 +15,12 @@ public class Heart : MonoBehaviour
         }
         else
         {
-
-            //rend = GetComponent<Renderer>();
-            //rend.material.shader = material;
+            material = GetComponent<Renderer>().material;
         }
     }
 
     void Update()
     {
-        //transform.localScale = new Vector3(transform.localScale.x, curve.Evaluate(Time.time), transform.localScale.z);
-
-        material = GetComponent<Renderer>().material;
         material.SetFloat("_heartbeat", curve.Evaluate(Time.time));
     }
 }
