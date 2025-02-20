@@ -2,7 +2,7 @@
 #include <DMXSerial.h>
 #include <SoftwareSerial.h>
 #include <SerialCommand.h>
- 
+
 #pragma region Queue
 ////////////////
 // QUEUE
@@ -10,68 +10,62 @@
 const int MAX_SIZE = 64;
 
 typedef struct {
-    byte items[MAX_SIZE];
-    int front;
-    int rear;
-    int count;
+  byte items[MAX_SIZE];
+  int front;
+  int rear;
+  int count;
 } Queue;
 
 // Function to initialize the queue
-void InitializeQueue(Queue* q)
-{
-    q->front = -1;
-    q->rear = 0;
-    q->count = 0;
+void InitializeQueue(Queue* q) {
+  q->front = -1;
+  q->rear = 0;
+  q->count = 0;
 }
 
 // Function to check if the queue is empty
-bool IsEmpty(Queue* q) 
-{ 
+bool IsEmpty(Queue* q) {
   int frontMod = (q->front + MAX_SIZE) % MAX_SIZE;
   int rearMod = (q->rear + MAX_SIZE) % MAX_SIZE;
-  return frontMod + 1 == rearMod; 
+  return frontMod + 1 == rearMod;
 }
 
 // Function to check if the queue is full
-bool IsFull(Queue* q) 
-{
+bool IsFull(Queue* q) {
   int frontMod = (q->front + MAX_SIZE) % MAX_SIZE;
   int rearMod = (q->rear + MAX_SIZE) % MAX_SIZE;
-  return frontMod == rearMod + 1; 
+  return frontMod == rearMod + 1;
 }
 
 // Function to add an element to the queue (Enqueue
 // operation)
-void Enqueue(Queue* q, byte value)
-{
-    if (IsFull(q)) {
-        return;
-    }
-    q->items[q->rear] = value;
-    q->rear = (q->rear + 1) % MAX_SIZE;
-    q->count++;
+void Enqueue(Queue* q, byte value) {
+  if (IsFull(q)) {
+    return;
+  }
+  q->items[q->rear] = value;
+  q->rear = (q->rear + 1) % MAX_SIZE;
+  q->count++;
 }
 
 // Function to remove an element from the queue (Dequeue
 // operation)
-void Dequeue(Queue* q)
-{
-    if (IsEmpty(q)) {
-        return;
-    }
-    q->front = (q->front + 1) % MAX_SIZE;
-    q->count--;
+void Dequeue(Queue* q) {
+  if (IsEmpty(q)) {
+    return;
+  }
+  q->front = (q->front + 1) % MAX_SIZE;
+  q->count--;
 }
 
 // Function to get the element at the front of the queue
 // (Peek operation)
-byte Peek(Queue* q)
-{
-    if (IsEmpty(q)) {
-        return 0; // return some default value or handle
-                  // error differently
-    }
-    return q->items[(q->front + 1) % MAX_SIZE];
+byte Peek(Queue* q) {
+  if (IsEmpty(q)) {
+    return 0;  // return some default value or handle
+               // error differently
+  }
+  return q->items[(q->front + 1) % MAX_SIZE];
 }
 ////////////////
 // END QUEUE
@@ -97,29 +91,25 @@ byte m_writeBuffer[BUFFER_SIZE];
 Queue m_recieveQueue;
 
 // DMX Control
-const int DMX_PIN = 0; 
+const int DMX_PIN = 0;
 
 // Buttons
 const int BUTTON_0_PIN = 2;
-const int BUTTON_1_PIN = 3; 
+const int BUTTON_1_PIN = 3;
 
 
 
-void setup() 
-{
+void setup() {
   Serial.begin(9600);
 
   InitializeQueue(&m_recieveQueue);
 
   InitDMX();
   InitButtons();
-
 }
 
-void loop() 
-{
-  if (Serial.available()) 
-  {
+void loop() {
+  if (Serial.available()) {
     int readBytes = Serial.readBytes(m_readBuffer, BUFFER_SIZE);
     //SendError(readBytes);
 
@@ -135,54 +125,47 @@ void loop()
 
 // Communication
 
-void DispatchRecievedMessage(int readBytes)
-{
-  for (int i = 0; i < readBytes; i++)
-  {
-      Enqueue(&m_recieveQueue, m_readBuffer[i]);
+void DispatchRecievedMessage(int readBytes) {
+  for (int i = 0; i < readBytes; i++) {
+    Enqueue(&m_recieveQueue, m_readBuffer[i]);
   }
 
   bool recievedEnoughDatas = true;
-  while (m_recieveQueue.count > 0 && recievedEnoughDatas)
-  {
-      byte queueHead = Peek(&m_recieveQueue);
-      switch (queueHead)
-      {
-          case DMX_COMMAND_HEADER:
-              recievedEnoughDatas &= TryProcessDMXDatas(&m_recieveQueue);
-              break;
+  while (m_recieveQueue.count > 0 && recievedEnoughDatas) {
+    byte queueHead = Peek(&m_recieveQueue);
+    switch (queueHead) {
+      case DMX_COMMAND_HEADER:
+        recievedEnoughDatas &= TryProcessDMXDatas(&m_recieveQueue);
+        break;
 
-          default: // The header is discarded if unknown
-              Dequeue(&m_recieveQueue);
-              SendError(queueHead);
-              break;
-      }
+      default:  // The header is discarded if unknown
+        Dequeue(&m_recieveQueue);
+        SendError(queueHead);
+        break;
+    }
   }
 }
 
-bool TryProcessDMXDatas(Queue* recievedDatas)
-{
-    if (recievedDatas->count < 3)
-    {
-        return false; // Should wait for more datas to arrive
-    }
+bool TryProcessDMXDatas(Queue* recievedDatas) {
+  if (recievedDatas->count < 3) {
+    return false;  // Should wait for more datas to arrive
+  }
 
-    Dequeue(recievedDatas); // Dequeue the header
+  Dequeue(recievedDatas);  // Dequeue the header
 
-    byte channel = Peek(recievedDatas);
-    Dequeue(recievedDatas); // Dequeue the channel
+  byte channel = Peek(recievedDatas);
+  Dequeue(recievedDatas);  // Dequeue the channel
 
-    byte value = Peek(recievedDatas);
-    Dequeue(recievedDatas); // Dequeue the value
+  byte value = Peek(recievedDatas);
+  Dequeue(recievedDatas);  // Dequeue the value
 
-    SendError(0); // All Good
-    SendDMXCommand(channel, value);
+  SendError(0);  // All Good
+  SendDMXCommand(channel, value);
 
-    return true; // The command was processed and removed from the queue
+  return true;  // The command was processed and removed from the queue
 }
 
-void SendError(byte errorCode)
-{
+void SendError(byte errorCode) {
   int wroteBytes;
   m_writeBuffer[wroteBytes++] = ERROR_HEADER;
   m_writeBuffer[wroteBytes++] = errorCode;
@@ -190,14 +173,12 @@ void SendError(byte errorCode)
 }
 
 // PulseSensor
-void InitButtons()
-{
+void InitButtons() {
   pinMode(BUTTON_0_PIN, INPUT);
   pinMode(BUTTON_1_PIN, INPUT);
 }
 
-void UpdateButtons()
-{
+void UpdateButtons() {
   byte button0State = digitalRead(BUTTON_0_PIN) > 0.5f ? 1 : 0;
   byte button1State = digitalRead(BUTTON_1_PIN) > 0.5f ? 1 : 0;
 
@@ -221,23 +202,20 @@ void UpdateButtons()
 
 
 // DMX
-void InitDMX()
-{
+void InitDMX() {
   pinMode(DMX_PIN, OUTPUT);
   DMXSerial.init(DMXController);
-
 }
 
-void SendDMXCommand(byte channel, byte value)
-{
-    DMXSerial.write(channel, value);
-    analogWrite(DMX_PIN, value);
+void SendDMXCommand(byte channel, byte value) {
+  DMXSerial.write(channel, value);
+  analogWrite(DMX_PIN, value);
 }
 
 // utils
 
-int Clamp(int value, int min, int max){
-  if (value < min){ return min; }
-  if (value > max){ return max; }
+int Clamp(int value, int min, int max) {
+  if (value < min) { return min; }
+  if (value > max) { return max; }
   return value;
 }
