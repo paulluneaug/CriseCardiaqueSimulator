@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{B8530036-CB16-4A04-B12C-E8E10AE57A64}" SchemaVersion="119">
+	<Modulators>
+		<WorkUnit Name="Default Work Unit" ID="{B8530036-CB16-4A04-B12C-E8E10AE57A64}" PersistMode="Standalone">
+			<ChildrenList>
+				<ModulatorEnvelope Name="U8_lost" ID="{D49A1768-0D15-4956-B105-497ADB8E57D2}" ShortID="700969062">
+					<PropertyList>
+						<Property Name="EnvelopeAttackTime" Type="Real64" Value="0.021"/>
+					</PropertyList>
+				</ModulatorEnvelope>
+			</ChildrenList>
+		</WorkUnit>
+	</Modulators>
+</WwiseDocument>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{16712023-A17E-4C43-B2CE-0428F47F01F5}" SchemaVersion="119">
+	<SoundBanks>
+		<WorkUnit Name="Default Work Unit" ID="{16712023-A17E-4C43-B2CE-0428F47F01F5}" PersistMode="Standalone">
+			<ChildrenList>
+				<SoundBank Name="main" ID="{1F52485E-A3A0-4474-9D96-226DD5251358}">
+					<ObjectInclusionList>
+						<ObjectRef Name="Play_init_game" ID="{2676A18A-84FF-4121-B891-FB4B917CE4A0}" WorkUnitID="{5E2B136C-CA8B-48A5-B4C0-979CE5D358EC}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_set_gameover" ID="{F2B7CA39-579C-41BC-BBC8-3164BFF4E422}" WorkUnitID="{5E2B136C-CA8B-48A5-B4C0-979CE5D358EC}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_set_intro" ID="{6D23A596-40E6-4610-B9A5-B240DD06A54E}" WorkUnitID="{5E2B136C-CA8B-48A5-B4C0-979CE5D358EC}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_set_game" ID="{AB373C10-1EA6-46AA-B71C-D2BC66DCF8E9}" WorkUnitID="{5E2B136C-CA8B-48A5-B4C0-979CE5D358EC}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_button_1" ID="{1E37B548-C151-4B4F-B2F5-BC12BAC41C6D}" WorkUnitID="{5E2B136C-CA8B-48A5-B4C0-979CE5D358EC}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_button_2" ID="{3DB6E45B-E974-4FCB-ADF5-510EA0961E5F}" WorkUnitID="{5E2B136C-CA8B-48A5-B4C0-979CE5D358EC}" Origin="Manual" Filter="7"/>
+					</ObjectInclusionList>
+					<ObjectExclusionList/>
+					<GameSyncExclusionList/>
+				</SoundBank>
+			</ChildrenList>
+		</WorkUnit>
+	</SoundBanks>
+</WwiseDocument>

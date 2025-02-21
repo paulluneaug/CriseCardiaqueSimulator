@@ -1,0 +1,32 @@
+Event	ID	Name			Wwise Object Path	Notes
+	842556545	Play_set_gameover			\Default Work Unit\Play_set_gameover	
+	1376856651	Play_set_game			\Default Work Unit\Play_set_game	
+	2296794009	Play_button_2			\Default Work Unit\Play_button_2	
+	2296794010	Play_button_1			\Default Work Unit\Play_button_1	
+	3245586965	Play_set_intro			\Default Work Unit\Play_set_intro	
+	3291290705	Play_init_game			\Default Work Unit\Play_init_game	
+
+Switch Group	ID	Name			Wwise Object Path	Notes
+	4091656514	gamestate			\Default Work Unit\gamestate	
+
+Switch	ID	Name	Switch Group			Notes
+	702482391	game	gamestate			
+	1125500713	intro	gamestate			
+	4158285989	gameover	gamestate			
+
+Game Parameter	ID	Name			Wwise Object Path	Notes
+	1409130199	RTPC_heartbeat_bpm			\Default Work Unit\RTPC_heartbeat_bpm	
+	2951868199	RTPC_button_meter_duck			\Default Work Unit\RTPC_button_meter_duck	
+
+Effect plug-ins	ID	Name	Type				Notes
+	3147646715	button_Meter	Wwise Meter			
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	181377064	button1	C:\Users\Artik\CriseCardiaqueSimulator\CriseCardiaqueSimulator\CriseCardiaqueSimulator_WwiseProject\.cache\Windows\SFX\button1 [2025-02-20 160300]_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\buttons\button1		495712
+	267548320	out	C:\Users\Artik\CriseCardiaqueSimulator\CriseCardiaqueSimulator\CriseCardiaqueSimulator_WwiseProject\.cache\Windows\SFX\beat out-glued_B619FD06.wem		\Actor-Mixer Hierarchy\Default Work Unit\heartbeat\out		96096
+	544525533	button2	C:\Users\Artik\CriseCardiaqueSimulator\CriseCardiaqueSimulator\CriseCardiaqueSimulator_WwiseProject\.cache\Windows\SFX\button2 [2025-02-20 160302]_1581C8CA.wem		\Actor-Mixer Hierarchy\Default Work Unit\buttons\button2		866492
+	747798513	start new game	C:\Users\Artik\CriseCardiaqueSimulator\CriseCardiaqueSimulator\CriseCardiaqueSimulator_WwiseProject\.cache\Windows\SFX\start [2025-02-20 160256]_231FCA4C.wem		\Actor-Mixer Hierarchy\Default Work Unit\start new game		941212
+	937410076	loop segment	C:\Users\Artik\CriseCardiaqueSimulator\CriseCardiaqueSimulator\CriseCardiaqueSimulator_WwiseProject\.cache\Windows\SFX\Heart Attack Simulator - 175_FBC78EF0.wem		\Interactive Music Hierarchy\Default Work Unit\Switch\loop\loop segment		22118496
+	982833217	in	C:\Users\Artik\CriseCardiaqueSimulator\CriseCardiaqueSimulator\CriseCardiaqueSimulator_WwiseProject\.cache\Windows\SFX\beat in-glued_F21BDA8C.wem		\Actor-Mixer Hierarchy\Default Work Unit\heartbeat\in		96096
+	1056423675	end game segment	C:\Users\Artik\CriseCardiaqueSimulator\CriseCardiaqueSimulator\CriseCardiaqueSimulator_WwiseProject\.cache\Windows\SFX\END2 [2025-02-20 170655]_FBC78EF0.wem		\Interactive Music Hierarchy\Default Work Unit\end game\end game segment		1083492
+

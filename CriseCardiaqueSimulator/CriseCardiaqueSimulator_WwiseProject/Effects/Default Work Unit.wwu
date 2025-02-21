@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{595D8764-231D-4DE8-AE0F-FB115DA68A54}" SchemaVersion="119">
+	<Effects>
+		<WorkUnit Name="Default Work Unit" ID="{595D8764-231D-4DE8-AE0F-FB115DA68A54}" PersistMode="Standalone">
+			<ChildrenList>
+				<Effect Name="button_Meter" ID="{5DEB1474-8D4A-4567-A7F9-F0EE81D0C6E1}" PluginName="Wwise Meter" CompanyID="0" PluginID="129" PluginType="3">
+					<PropertyList>
+						<Property Name="AttackTime" Type="Real32" Value="0.03"/>
+						<Property Name="ReleaseTime" Type="Real32" Value="0.2"/>
+					</PropertyList>
+					<PluginData>
+	<GameParameter Name="RTPC_button_meter_duck" ID="{C2912E37-C771-4983-854D-121E38D4E3ED}"/>
+</PluginData>
+				</Effect>
+			</ChildrenList>
+		</WorkUnit>
+	</Effects>
+</WwiseDocument>
