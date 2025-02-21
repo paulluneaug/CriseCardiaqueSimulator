@@ -193,6 +193,8 @@ public class GameManager : MonoBehaviour
         m_startTextController.gameObject.SetActive(true);
         m_background.gameObject.SetActive(true);
         m_heartRateScorePanel.gameObject.SetActive(false);
+
+        AkSoundEngine.PostEvent("Play_gameready", gameObject);
     }
 
     private void StartMainloop()

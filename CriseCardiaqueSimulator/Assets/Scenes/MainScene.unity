@@ -1802,6 +1802,7 @@ MonoBehaviour:
     m_duration: 1
     m_repeat: 1
   m_countdownSteps:
+  - ' '
   - 3
   - 2
   - 1
@@ -2382,7 +2383,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -93.59607, y: 0}
+  m_AnchoredPosition: {x: -93.59595, y: 0}
   m_SizeDelta: {x: -187.192, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1928693015

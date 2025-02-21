@@ -9,7 +9,7 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{EDBEFA1B-5CAB-6A87-CE0B-592C4FFC9896}">
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{0E08306E-7F07-BC33-22B9-1E3982AD4EB0}">
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 			<Plugins>
@@ -25,6 +25,15 @@
 				<GameParameter Id="1409130199" Name="RTPC_heartbeat_bpm"/>
 				<GameParameter Id="2951868199" Name="RTPC_button_meter_duck"/>
 			</GameParameters>
+			<StateGroups>
+				<StateGroup Id="2798074986" Name="music_muted">
+					<States>
+						<State Id="748895195" Name="None"/>
+						<State Id="3763503965" Name="unmuted"/>
+						<State Id="3791155954" Name="muted"/>
+					</States>
+				</StateGroup>
+			</StateGroups>
 			<SwitchGroups>
 				<SwitchGroup Id="4091656514" Name="gamestate">
 					<Switches>
@@ -35,10 +44,18 @@
 				</SwitchGroup>
 			</SwitchGroups>
 		</SoundBank>
-		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{9D9161A7-FB58-C388-630D-DEF93E458B12}">
+		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{AC633CDD-FA6B-EC98-7FAA-4CABC191F1A7}">
 			<ShortName>main</ShortName>
 			<Path>main.bnk</Path>
 			<Media>
+				<File Id="41365762" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>reaper_stems-013.wav</ShortName>
+					<CachePath>SFX/reaper_stems-013_45F91031.wem</CachePath>
+				</File>
+				<File Id="169000772" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>reaper_stems-013.wav</ShortName>
+					<CachePath>SFX/reaper_stems-013_8E1EBB1F.wem</CachePath>
+				</File>
 				<File Id="181377064" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>button1 [2025-02-20 160300].wav</ShortName>
 					<CachePath>SFX/button1 [2025-02-20 160300]_818F3B66.wem</CachePath>
@@ -46,6 +63,10 @@
 				<File Id="267548320" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>beat out-glued.wav</ShortName>
 					<CachePath>SFX/beat out-glued_B619FD06.wem</CachePath>
+				</File>
+				<File Id="398465400" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>reaper_stems-013.wav</ShortName>
+					<CachePath>SFX/reaper_stems-013_E7E99988.wem</CachePath>
 				</File>
 				<File Id="544525533" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>button2 [2025-02-20 160302].wav</ShortName>
@@ -55,6 +76,10 @@
 					<ShortName>buttons too early too late  [2025-02-21 113352].wav</ShortName>
 					<CachePath>SFX/buttons too early too late  [2025-02-21 113352]_9ECBC2AF.wem</CachePath>
 				</File>
+				<File Id="712927268" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>reaper_stems-013.wav</ShortName>
+					<CachePath>SFX/reaper_stems-013_F110D9FB.wem</CachePath>
+				</File>
 				<File Id="722254932" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>buttons too early too late  [2025-02-21 113352].wav</ShortName>
 					<CachePath>SFX/buttons too early too late  [2025-02-21 113352]_5AF6371F.wem</CachePath>
@@ -62,6 +87,10 @@
 				<File Id="747798513" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>start [2025-02-20 160256].wav</ShortName>
 					<CachePath>SFX/start [2025-02-20 160256]_231FCA4C.wem</CachePath>
+				</File>
+				<File Id="761766682" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>reaper_stems-016.wav</ShortName>
+					<CachePath>SFX/reaper_stems-016_818F3B66.wem</CachePath>
 				</File>
 				<File Id="937410076" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Heart Attack Simulator - 175.wav</ShortName>
@@ -113,6 +142,20 @@
 						</ShareSets>
 					</PluginRefs>
 				</Event>
+				<Event Id="1010471913" Name="Play_gameready" DurationType="OneShot" DurationMin="4.8383203" DurationMax="4.8383203">
+					<MediaRefs>
+						<MediaRef Id="41365762"/>
+						<MediaRef Id="169000772"/>
+						<MediaRef Id="398465400"/>
+						<MediaRef Id="712927268"/>
+						<MediaRef Id="761766682"/>
+					</MediaRefs>
+					<PluginRefs>
+						<ShareSets>
+							<PluginRef Id="3147646715"/>
+						</ShareSets>
+					</PluginRefs>
+				</Event>
 				<Event Id="3291290705" Name="Play_init_game" DurationType="Infinite">
 					<MediaRefs>
 						<MediaRef Id="267548320"/>
@@ -140,9 +183,17 @@
 							</MediaRefs>
 						</SwitchContainer>
 					</SwitchContainers>
+					<ActionSetState>
+						<ActionSetStateEntry GroupId="2798074986" Id="3763503965" Name="unmuted"/>
+					</ActionSetState>
 					<ActionSetSwitch>
 						<ActionSetSwitchEntry GroupId="4091656514" Id="1125500713" Name="intro"/>
 					</ActionSetSwitch>
+				</Event>
+				<Event Id="1340738297" Name="Play_mute_music" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0">
+					<ActionSetState>
+						<ActionSetStateEntry GroupId="2798074986" Id="3791155954" Name="muted"/>
+					</ActionSetState>
 				</Event>
 				<Event Id="1376856651" Name="Play_set_game" DurationType="OneShot" DurationMin="4.901647" DurationMax="4.901647">
 					<MediaRefs>
@@ -163,11 +214,25 @@
 					</ActionSetSwitch>
 				</Event>
 				<Event Id="2904946146" Name="Play_stop_all" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="1426335544" Name="Play_unmute_music" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0">
+					<ActionSetState>
+						<ActionSetStateEntry GroupId="2798074986" Id="3763503965" Name="unmuted"/>
+					</ActionSetState>
+				</Event>
 			</Events>
 			<GameParameters>
 				<GameParameter Id="1409130199" Name="RTPC_heartbeat_bpm"/>
 				<GameParameter Id="2951868199" Name="RTPC_button_meter_duck"/>
 			</GameParameters>
+			<StateGroups>
+				<StateGroup Id="2798074986" Name="music_muted">
+					<States>
+						<State Id="748895195" Name="None"/>
+						<State Id="3763503965" Name="unmuted"/>
+						<State Id="3791155954" Name="muted"/>
+					</States>
+				</StateGroup>
+			</StateGroups>
 			<SwitchGroups>
 				<SwitchGroup Id="4091656514" Name="gamestate">
 					<Switches>
@@ -179,5 +244,5 @@
 			</SwitchGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{7FC44767-40FD-3D27-6681-03F468095125}</FileHash>
+	<FileHash>{BFB74235-96F4-DDC1-5569-75D3B735B917}</FileHash>
 </SoundBanksInfo>

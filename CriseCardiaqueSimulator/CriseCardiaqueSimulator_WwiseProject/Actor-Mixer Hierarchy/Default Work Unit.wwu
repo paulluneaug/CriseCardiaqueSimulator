@@ -468,6 +468,216 @@
 						</ObjectList>
 					</ObjectLists>
 				</RandomSequenceContainer>
+				<RandomSequenceContainer Name="countdown" ID="{A6F80DA3-4361-4809-BE20-C6C696BAFA8C}" ShortID="650739810">
+					<PropertyList>
+						<Property Name="MakeUpGain" Type="Real64">
+							<ValueList>
+								<Value>2</Value>
+							</ValueList>
+						</Property>
+						<Property Name="PlayMechanismSpecialTransitions" Type="bool" Value="True"/>
+						<Property Name="PlayMechanismSpecialTransitionsType" Type="int16" Value="3"/>
+						<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
+						<Property Name="RandomOrSequence" Type="int16" Value="0"/>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{EFBD4D6E-1C89-4DF3-A407-EE4869BB3BA7}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{20152C59-0859-490D-9296-C884B69967F9}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="Countdown" ID="{1FE2EB0A-D932-4E02-879E-6A332E59121D}" ShortID="574199620">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{EFBD4D6E-1C89-4DF3-A407-EE4869BB3BA7}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{20152C59-0859-490D-9296-C884B69967F9}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="reaper_stems-013" ID="{BF1DF085-F00C-4F0E-8945-8EE4B40F1734}">
+									<PropertyList>
+										<Property Name="FadeOutDuration" Type="Real64" Value="0.174901370533529"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimEnd" Type="Real64" Value="0.741823054331866"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>reaper_stems-013.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="41365762"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="reaper_stems-013" ID="{BF1DF085-F00C-4F0E-8945-8EE4B40F1734}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Countdown_01" ID="{A796E692-0FA3-4471-A356-27A20E6204BB}" ShortID="674350795">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{EFBD4D6E-1C89-4DF3-A407-EE4869BB3BA7}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{20152C59-0859-490D-9296-C884B69967F9}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="reaper_stems-013" ID="{34604A29-8743-422E-8B4D-EC5D208652AF}">
+									<PropertyList>
+										<Property Name="FadeInDuration" Type="Real64" Value="0.0241243269701419"/>
+										<Property Name="FadeOutDuration" Type="Real64" Value="0.12062163485071"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="0.983066324033284"/>
+										<Property Name="TrimEnd" Type="Real64" Value="1.84551101321586"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>reaper_stems-013.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="398465400"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="reaper_stems-013" ID="{34604A29-8743-422E-8B4D-EC5D208652AF}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Countdown_02" ID="{037198C2-C1FB-4B2B-8404-96FF5C3A6CDC}" ShortID="957987897">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{EFBD4D6E-1C89-4DF3-A407-EE4869BB3BA7}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{20152C59-0859-490D-9296-C884B69967F9}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="reaper_stems-013" ID="{808A1964-16FD-46AF-8A18-3FA987BD3370}">
+									<PropertyList>
+										<Property Name="FadeInDuration" Type="Real64" Value="0.0241243269701421"/>
+										<Property Name="FadeOutDuration" Type="Real64" Value="0.114590553108175"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="1.96010156632403"/>
+										<Property Name="TrimEnd" Type="Real64" Value="2.73811111111111"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>reaper_stems-013.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="712927268"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="reaper_stems-013" ID="{808A1964-16FD-46AF-8A18-3FA987BD3370}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Countdown_03" ID="{ADC85446-FF3A-4CB4-857B-4DE0E5BCDBAA}" ShortID="418376846">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{EFBD4D6E-1C89-4DF3-A407-EE4869BB3BA7}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{20152C59-0859-490D-9296-C884B69967F9}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="reaper_stems-013" ID="{2EDCFF4B-E0D7-4BE6-84ED-25F4E188E372}">
+									<PropertyList>
+										<Property Name="FadeInDuration" Type="Real64" Value="0.0482486539402838"/>
+										<Property Name="FadeOutDuration" Type="Real64" Value="0.0784040626529614"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="2.98538546255507"/>
+										<Property Name="TrimEnd" Type="Real64" Value="3.8237058247675"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>reaper_stems-013.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="169000772"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="reaper_stems-013" ID="{2EDCFF4B-E0D7-4BE6-84ED-25F4E188E372}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+					<ObjectLists>
+						<ObjectList Name="Effects">
+							<Reference>
+								<Local>
+									<EffectSlot Name="" ID="{ADF73E46-0534-4133-AE4F-92D4088C30BA}" ShortID="61433803">
+										<ReferenceList>
+											<Reference Name="Effect" PluginName="Wwise Meter" CompanyID="0" PluginID="129" PluginType="3">
+												<ObjectRef Name="button_Meter" ID="{5DEB1474-8D4A-4567-A7F9-F0EE81D0C6E1}" WorkUnitID="{595D8764-231D-4DE8-AE0F-FB115DA68A54}"/>
+											</Reference>
+										</ReferenceList>
+									</EffectSlot>
+								</Local>
+							</Reference>
+						</ObjectList>
+						<ObjectList Name="Playlist">
+							<Reference>
+								<ObjectRef Name="Countdown" ID="{1FE2EB0A-D932-4E02-879E-6A332E59121D}" WorkUnitID="{9564804D-62E3-4657-961D-55D35419BB6C}"/>
+							</Reference>
+							<Reference>
+								<ObjectRef Name="Countdown_01" ID="{A796E692-0FA3-4471-A356-27A20E6204BB}" WorkUnitID="{9564804D-62E3-4657-961D-55D35419BB6C}"/>
+							</Reference>
+							<Reference>
+								<ObjectRef Name="Countdown_02" ID="{037198C2-C1FB-4B2B-8404-96FF5C3A6CDC}" WorkUnitID="{9564804D-62E3-4657-961D-55D35419BB6C}"/>
+							</Reference>
+							<Reference>
+								<ObjectRef Name="Countdown_03" ID="{ADC85446-FF3A-4CB4-857B-4DE0E5BCDBAA}" WorkUnitID="{9564804D-62E3-4657-961D-55D35419BB6C}"/>
+							</Reference>
+						</ObjectList>
+					</ObjectLists>
+				</RandomSequenceContainer>
+				<Sound Name="game_ready" ID="{23FC057C-62E2-4B07-9040-B3F385A40B5D}" ShortID="10813213">
+					<PropertyList>
+						<Property Name="MakeUpGain" Type="Real64">
+							<ValueList>
+								<Value>10</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{EFBD4D6E-1C89-4DF3-A407-EE4869BB3BA7}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{20152C59-0859-490D-9296-C884B69967F9}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="reaper_stems-016" ID="{36F98C79-C292-424A-B3A3-7AF78B10B178}">
+							<Language>SFX</Language>
+							<AudioFile>reaper_stems-016.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="761766682"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ObjectLists>
+						<ObjectList Name="Effects">
+							<Reference>
+								<Local>
+									<EffectSlot Name="" ID="{4874427A-5CDE-425A-AD38-B497C7653422}" ShortID="149162270">
+										<ReferenceList>
+											<Reference Name="Effect" PluginName="Wwise Meter" CompanyID="0" PluginID="129" PluginType="3">
+												<ObjectRef Name="button_Meter" ID="{5DEB1474-8D4A-4567-A7F9-F0EE81D0C6E1}" WorkUnitID="{595D8764-231D-4DE8-AE0F-FB115DA68A54}"/>
+											</Reference>
+										</ReferenceList>
+									</EffectSlot>
+								</Local>
+							</Reference>
+						</ObjectList>
+					</ObjectLists>
+					<ActiveSourceList>
+						<ActiveSource Name="reaper_stems-016" ID="{36F98C79-C292-424A-B3A3-7AF78B10B178}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
 			</ChildrenList>
 		</WorkUnit>
 	</AudioObjects>

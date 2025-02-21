@@ -44,10 +44,18 @@
 				</SwitchGroup>
 			</SwitchGroups>
 		</SoundBank>
-		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{57B249BA-A242-9A4C-0DA2-0CF2E3B34848}">
+		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{AC633CDD-FA6B-EC98-7FAA-4CABC191F1A7}">
 			<ShortName>main</ShortName>
 			<Path>main.bnk</Path>
 			<Media>
+				<File Id="41365762" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>reaper_stems-013.wav</ShortName>
+					<CachePath>SFX/reaper_stems-013_45F91031.wem</CachePath>
+				</File>
+				<File Id="169000772" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>reaper_stems-013.wav</ShortName>
+					<CachePath>SFX/reaper_stems-013_8E1EBB1F.wem</CachePath>
+				</File>
 				<File Id="181377064" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>button1 [2025-02-20 160300].wav</ShortName>
 					<CachePath>SFX/button1 [2025-02-20 160300]_818F3B66.wem</CachePath>
@@ -56,21 +64,33 @@
 					<ShortName>beat out-glued.wav</ShortName>
 					<CachePath>SFX/beat out-glued_B619FD06.wem</CachePath>
 				</File>
+				<File Id="398465400" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>reaper_stems-013.wav</ShortName>
+					<CachePath>SFX/reaper_stems-013_E7E99988.wem</CachePath>
+				</File>
 				<File Id="544525533" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>button2 [2025-02-20 160302].wav</ShortName>
 					<CachePath>SFX/button2 [2025-02-20 160302]_1581C8CA.wem</CachePath>
 				</File>
 				<File Id="701922673" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>buttons too early too late  [2025-02-21 113352].wav</ShortName>
-					<CachePath>SFX/buttons too early too late  [2025-02-21 113352]_4084D19C.wem</CachePath>
+					<CachePath>SFX/buttons too early too late  [2025-02-21 113352]_9ECBC2AF.wem</CachePath>
+				</File>
+				<File Id="712927268" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>reaper_stems-013.wav</ShortName>
+					<CachePath>SFX/reaper_stems-013_F110D9FB.wem</CachePath>
 				</File>
 				<File Id="722254932" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>buttons too early too late  [2025-02-21 113352].wav</ShortName>
-					<CachePath>SFX/buttons too early too late  [2025-02-21 113352]_1C8F5133.wem</CachePath>
+					<CachePath>SFX/buttons too early too late  [2025-02-21 113352]_5AF6371F.wem</CachePath>
 				</File>
 				<File Id="747798513" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>start [2025-02-20 160256].wav</ShortName>
 					<CachePath>SFX/start [2025-02-20 160256]_231FCA4C.wem</CachePath>
+				</File>
+				<File Id="761766682" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>reaper_stems-016.wav</ShortName>
+					<CachePath>SFX/reaper_stems-016_818F3B66.wem</CachePath>
 				</File>
 				<File Id="937410076" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Heart Attack Simulator - 175.wav</ShortName>
@@ -115,6 +135,20 @@
 				<Event Id="3781966448" Name="Play_button_too_late" DurationType="OneShot" DurationMin="0.83237594" DurationMax="0.83237594">
 					<MediaRefs>
 						<MediaRef Id="722254932"/>
+					</MediaRefs>
+					<PluginRefs>
+						<ShareSets>
+							<PluginRef Id="3147646715"/>
+						</ShareSets>
+					</PluginRefs>
+				</Event>
+				<Event Id="1010471913" Name="Play_gameready" DurationType="OneShot" DurationMin="4.8383203" DurationMax="4.8383203">
+					<MediaRefs>
+						<MediaRef Id="41365762"/>
+						<MediaRef Id="169000772"/>
+						<MediaRef Id="398465400"/>
+						<MediaRef Id="712927268"/>
+						<MediaRef Id="761766682"/>
 					</MediaRefs>
 					<PluginRefs>
 						<ShareSets>
@@ -210,5 +244,5 @@
 			</SwitchGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{B19DD782-AFA0-363E-A60D-63F7B6C7EC84}</FileHash>
+	<FileHash>{82D74147-9974-6E7B-0E43-B03EC82042A4}</FileHash>
 </SoundBanksInfo>

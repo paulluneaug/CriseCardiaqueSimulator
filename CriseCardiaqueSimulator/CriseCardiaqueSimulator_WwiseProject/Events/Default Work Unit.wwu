@@ -73,6 +73,28 @@
 								</Reference>
 							</ReferenceList>
 						</Action>
+						<Action Name="" ID="{C6782BE2-061C-4915-9ABD-4C80263F6458}" ShortID="69650469">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="22"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="unmuted" ID="{30E70472-0DAD-4E49-9072-A1CB5A3C9282}" WorkUnitID="{6B1DCCF3-3601-4C48-9EB5-D2B7BF115B64}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{418D4CC3-9F4F-4A58-AC82-CE48ADF07F89}" ShortID="178321457">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="5"/>
+								<Property Name="FadeTime" Type="Real64" Value="0.5"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="heartbeat" ID="{371BD6A2-3EC4-42EA-B22F-E526153844F1}" WorkUnitID="{9564804D-62E3-4657-961D-55D35419BB6C}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
 					</ChildrenList>
 				</Event>
 				<Event Name="Play_set_intro" ID="{6D23A596-40E6-4610-B9A5-B240DD06A54E}">
@@ -122,6 +144,17 @@
 								</Reference>
 							</ReferenceList>
 						</Action>
+						<Action Name="" ID="{0736BD15-9438-4431-974F-42C0FA6D0FCB}" ShortID="585242073">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="4"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="heartbeat" ID="{371BD6A2-3EC4-42EA-B22F-E526153844F1}" WorkUnitID="{9564804D-62E3-4657-961D-55D35419BB6C}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
 					</ChildrenList>
 				</Event>
 				<Event Name="Play_button_good" ID="{1E37B548-C151-4B4F-B2F5-BC12BAC41C6D}">
@@ -135,7 +168,17 @@
 						</Action>
 					</ChildrenList>
 				</Event>
-				<Event Name="Play_stop_all" ID="{6014AC77-3CBF-4878-ACC8-48D5BDDFC880}"/>
+				<Event Name="Play_stop_all" ID="{6014AC77-3CBF-4878-ACC8-48D5BDDFC880}">
+					<ChildrenList>
+						<Action Name="" ID="{D8CEE94C-1808-4C6E-A602-71C30092683E}" ShortID="136434056">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="3"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList/>
+						</Action>
+					</ChildrenList>
+				</Event>
 				<Event Name="Play_button_too_early" ID="{F01192D5-3A6A-4029-9592-327368C62AE6}">
 					<ChildrenList>
 						<Action Name="" ID="{0A64F6F2-BBAC-4CAC-9E09-7BB06AA06517}" ShortID="772754337">
@@ -153,6 +196,55 @@
 							<ReferenceList>
 								<Reference Name="Target">
 									<ObjectRef Name="buttons_too_late" ID="{BE35B55B-C334-455E-A202-E23A67407DDA}" WorkUnitID="{9564804D-62E3-4657-961D-55D35419BB6C}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_mute_music" ID="{39EE6E99-6BC3-486F-BC36-BF20BE642AEE}">
+					<ChildrenList>
+						<Action Name="" ID="{B6CEDAF2-D39B-4E8D-8FD4-8A9FD683A818}" ShortID="751466423">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="22"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="muted" ID="{227455B2-ECF9-4849-A445-EC7BA7A317C6}" WorkUnitID="{6B1DCCF3-3601-4C48-9EB5-D2B7BF115B64}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_unmute_music" ID="{0BF908ED-0856-4535-AA9B-57A09D276984}">
+					<ChildrenList>
+						<Action Name="" ID="{FDB78291-1356-44C9-ABF3-73C61188F224}" ShortID="439338225">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="22"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="unmuted" ID="{30E70472-0DAD-4E49-9072-A1CB5A3C9282}" WorkUnitID="{6B1DCCF3-3601-4C48-9EB5-D2B7BF115B64}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_gameready" ID="{5D9B8A5F-8665-401A-A5A3-F6CB96AF97B1}">
+					<ChildrenList>
+						<Action Name="" ID="{8E6121F0-9276-442C-B251-FFDD788D241B}" ShortID="740689106">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="game_ready" ID="{23FC057C-62E2-4B07-9040-B3F385A40B5D}" WorkUnitID="{9564804D-62E3-4657-961D-55D35419BB6C}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{DBE1226E-596E-4374-9058-12938AB3CB9D}" ShortID="496079013">
+							<PropertyList>
+								<Property Name="Delay" Type="Real64" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="countdown" ID="{A6F80DA3-4361-4809-BE20-C6C696BAFA8C}" WorkUnitID="{9564804D-62E3-4657-961D-55D35419BB6C}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
