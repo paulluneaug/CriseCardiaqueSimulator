@@ -66,7 +66,7 @@ MonoBehaviour:
     ParentPath: SoundBanks\Default Work Unit
     guid: 232071167ea1434cb2ce0428f47f01f5
     GuidInternal: 
-    m_lastTime: -8584615338432827192
+    m_lastTime: -8584614727306794680
     List:
     - name: main
       guid: 5e48521fa0a374449d96226dd5251358
@@ -94,11 +94,11 @@ MonoBehaviour:
     ParentPath: Events\Default Work Unit
     guid: 6c132b5e8bcaa548b4c0979ce5d358ec
     GuidInternal: 
-    m_lastTime: -8584615337194150797
+    m_lastTime: -8584614727498109359
     List:
-    - name: Play_button_1
+    - name: Play_button_good
       guid: 48b5371e51c14f4bb2f5bc12bac41c6d
-      id: 2296794010
+      id: 3676383806
       PathAndIcons:
       - ElementName: Events
         ObjectType: 5
@@ -106,16 +106,16 @@ MonoBehaviour:
       - ElementName: Default Work Unit
         ObjectType: 12
         guid: 6c132b5e8bcaa548b4c0979ce5d358ec
-      - ElementName: Play_button_1
+      - ElementName: Play_button_good
         ObjectType: 3
         guid: 48b5371e51c14f4bb2f5bc12bac41c6d
-      Path: Events\Default Work Unit\Play_button_1
+      Path: Events\Default Work Unit\Play_button_good
       maxAttenuation: 0
-      maxDuration: 2.5813334
+      maxDuration: 4.5124707
       minDuration: 2.5813334
-    - name: Play_button_2
-      guid: 5be4b63d74e9cb4fadf5510ea0961e5f
-      id: 2296794009
+    - name: Play_button_too_early
+      guid: d59211f06a3a29409592327368c62ae6
+      id: 3025487729
       PathAndIcons:
       - ElementName: Events
         ObjectType: 5
@@ -123,13 +123,30 @@ MonoBehaviour:
       - ElementName: Default Work Unit
         ObjectType: 12
         guid: 6c132b5e8bcaa548b4c0979ce5d358ec
-      - ElementName: Play_button_2
+      - ElementName: Play_button_too_early
         ObjectType: 3
-        guid: 5be4b63d74e9cb4fadf5510ea0961e5f
-      Path: Events\Default Work Unit\Play_button_2
+        guid: d59211f06a3a29409592327368c62ae6
+      Path: Events\Default Work Unit\Play_button_too_early
       maxAttenuation: 0
-      maxDuration: 4.5124707
-      minDuration: 4.5124707
+      maxDuration: 0.79157317
+      minDuration: 0.79157317
+    - name: Play_button_too_late
+      guid: 2b0c7142149a2942b749f69e5c30d4ed
+      id: 3781966448
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 6c132b5e8bcaa548b4c0979ce5d358ec
+      - ElementName: Play_button_too_late
+        ObjectType: 3
+        guid: 2b0c7142149a2942b749f69e5c30d4ed
+      Path: Events\Default Work Unit\Play_button_too_late
+      maxAttenuation: 0
+      maxDuration: 0.83237594
+      minDuration: 0.83237594
     - name: Play_init_game
       guid: 8aa17626ff842141b891fb4b917ce4a0
       id: 3291290705
@@ -213,8 +230,8 @@ MonoBehaviour:
         guid: 77ac1460bf3c7848acc848d5bddfc880
       Path: Events\Default Work Unit\Play_stop_all
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 0
+      minDuration: 0
   RtpcWwu:
   - PhysicalPath: Game Parameters\Default Work Unit.wwu
     PathAndIcons:
@@ -365,7 +382,7 @@ MonoBehaviour:
     GuidInternal: 
     m_lastTime: -8584615398863340317
     List: []
-  ExpandedFileSystemItemIds: 1300000014000000
+  ExpandedFileSystemItemIds: 020000000300000013000000140000001b0000001c000000
   ExpandedWaapiItemIds: 
   AutoSyncSelection: 0
   autoPopulateEnabled: 1

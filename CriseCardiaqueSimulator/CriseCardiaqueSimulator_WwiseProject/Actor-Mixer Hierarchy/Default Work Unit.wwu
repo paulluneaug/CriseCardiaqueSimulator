@@ -8,7 +8,7 @@
 						<Property Name="IsGlobalLimit" Type="int16" Value="1"/>
 						<Property Name="MakeUpGain" Type="Real64">
 							<ValueList>
-								<Value>9</Value>
+								<Value>2</Value>
 							</ValueList>
 						</Property>
 						<Property Name="MaxSoundPerInstance" Type="int16">
@@ -49,13 +49,6 @@
 					</ActiveSourceList>
 				</Sound>
 				<ActorMixer Name="buttons" ID="{12BCCC83-9DEB-4E4E-A28F-2BD6CA31DEC9}" ShortID="875980435">
-					<PropertyList>
-						<Property Name="MakeUpGain" Type="Real64">
-							<ValueList>
-								<Value>7</Value>
-							</ValueList>
-						</Property>
-					</PropertyList>
 					<ReferenceList>
 						<Reference Name="Conversion">
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{EFBD4D6E-1C89-4DF3-A407-EE4869BB3BA7}"/>
@@ -65,19 +58,9 @@
 						</Reference>
 					</ReferenceList>
 					<ChildrenList>
-						<Sound Name="button1" ID="{42EA95EB-9E39-4650-B194-ECC6E8BA5D4B}" ShortID="791119028">
+						<RandomSequenceContainer Name="buttons_good" ID="{45F7F066-4D18-4677-8370-B7333BFC851F}" ShortID="820043625">
 							<PropertyList>
-								<Property Name="IsGlobalLimit" Type="int16" Value="1"/>
-								<Property Name="MaxSoundPerInstance" Type="int16">
-									<ValueList>
-										<Value>1</Value>
-									</ValueList>
-								</Property>
-								<Property Name="UseMaxSoundPerInstance" Type="bool">
-									<ValueList>
-										<Value>True</Value>
-									</ValueList>
-								</Property>
+								<Property Name="RandomOrSequence" Type="int16" Value="0"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
@@ -88,56 +71,148 @@
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
-								<AudioFileSource Name="button1 [2025-02-20 160300]" ID="{267E78C1-5700-4B14-B7C4-6D8E06606A7F}">
-									<Language>SFX</Language>
-									<AudioFile>button1 [2025-02-20 160300].wav</AudioFile>
-									<MediaIDList>
-										<MediaID ID="181377064"/>
-									</MediaIDList>
-								</AudioFileSource>
-							</ChildrenList>
-							<ActiveSourceList>
-								<ActiveSource Name="button1 [2025-02-20 160300]" ID="{267E78C1-5700-4B14-B7C4-6D8E06606A7F}" Platform="Linked"/>
-							</ActiveSourceList>
-						</Sound>
-						<Sound Name="button2" ID="{47211208-0CA0-4E3C-8EBE-D88B49F9E53D}" ShortID="426403536">
-							<PropertyList>
-								<Property Name="IsGlobalLimit" Type="int16" Value="1"/>
-								<Property Name="MaxSoundPerInstance" Type="int16">
-									<ValueList>
-										<Value>1</Value>
-									</ValueList>
-								</Property>
-								<Property Name="UseMaxSoundPerInstance" Type="bool">
-									<ValueList>
-										<Value>True</Value>
-									</ValueList>
-								</Property>
-							</PropertyList>
-							<ReferenceList>
-								<Reference Name="Conversion">
-									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{EFBD4D6E-1C89-4DF3-A407-EE4869BB3BA7}"/>
-								</Reference>
-								<Reference Name="OutputBus">
-									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{20152C59-0859-490D-9296-C884B69967F9}"/>
-								</Reference>
-							</ReferenceList>
-							<ChildrenList>
-								<AudioFileSource Name="button2 [2025-02-20 160302]" ID="{4CE6A10D-F76C-4B4D-94BA-6E3E4C8AAFBC}">
+								<Sound Name="button1" ID="{42EA95EB-9E39-4650-B194-ECC6E8BA5D4B}" ShortID="791119028">
 									<PropertyList>
-										<Property Name="LoopBegin" Type="Real64" Value="0.244862745098039"/>
+										<Property Name="IsGlobalLimit" Type="int16" Value="1"/>
+										<Property Name="MaxSoundPerInstance" Type="int16">
+											<ValueList>
+												<Value>1</Value>
+											</ValueList>
+										</Property>
+										<Property Name="UseMaxSoundPerInstance" Type="bool">
+											<ValueList>
+												<Value>True</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{EFBD4D6E-1C89-4DF3-A407-EE4869BB3BA7}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{20152C59-0859-490D-9296-C884B69967F9}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="button1 [2025-02-20 160300]" ID="{267E78C1-5700-4B14-B7C4-6D8E06606A7F}">
+											<Language>SFX</Language>
+											<AudioFile>button1 [2025-02-20 160300].wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="181377064"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="button1 [2025-02-20 160300]" ID="{267E78C1-5700-4B14-B7C4-6D8E06606A7F}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="button2" ID="{47211208-0CA0-4E3C-8EBE-D88B49F9E53D}" ShortID="426403536">
+									<PropertyList>
+										<Property Name="IsGlobalLimit" Type="int16" Value="1"/>
+										<Property Name="MaxSoundPerInstance" Type="int16">
+											<ValueList>
+												<Value>1</Value>
+											</ValueList>
+										</Property>
+										<Property Name="UseMaxSoundPerInstance" Type="bool">
+											<ValueList>
+												<Value>True</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{EFBD4D6E-1C89-4DF3-A407-EE4869BB3BA7}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{20152C59-0859-490D-9296-C884B69967F9}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="button2 [2025-02-20 160302]" ID="{4CE6A10D-F76C-4B4D-94BA-6E3E4C8AAFBC}">
+											<PropertyList>
+												<Property Name="LoopBegin" Type="Real64" Value="0.244862745098039"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="0.244862745098039"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>button2 [2025-02-20 160302].wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="544525533"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="button2 [2025-02-20 160302]" ID="{4CE6A10D-F76C-4B4D-94BA-6E3E4C8AAFBC}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+							<ObjectLists>
+								<ObjectList Name="Playlist">
+									<Reference>
+										<ObjectRef Name="button1" ID="{42EA95EB-9E39-4650-B194-ECC6E8BA5D4B}" WorkUnitID="{9564804D-62E3-4657-961D-55D35419BB6C}"/>
+									</Reference>
+									<Reference>
+										<ObjectRef Name="button2" ID="{47211208-0CA0-4E3C-8EBE-D88B49F9E53D}" WorkUnitID="{9564804D-62E3-4657-961D-55D35419BB6C}"/>
+									</Reference>
+								</ObjectList>
+							</ObjectLists>
+						</RandomSequenceContainer>
+						<Sound Name="buttons_too_early" ID="{13E7D7A1-4A85-4F90-B844-C6D99A1FFB57}" ShortID="17034699">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{EFBD4D6E-1C89-4DF3-A407-EE4869BB3BA7}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{20152C59-0859-490D-9296-C884B69967F9}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="buttons too early too late  [2025-02-21 113352]" ID="{47158031-9B16-4007-863C-A8A4ED80683F}">
+									<PropertyList>
+										<Property Name="FadeOutDuration" Type="Real64" Value="0.359064121390112"/>
 										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-										<Property Name="TrimBegin" Type="Real64" Value="0.244862745098039"/>
+										<Property Name="TrimBegin" Type="Real64" Value="4.11291629955947"/>
+										<Property Name="TrimEnd" Type="Real64" Value="4.9044894762604"/>
 									</PropertyList>
 									<Language>SFX</Language>
-									<AudioFile>button2 [2025-02-20 160302].wav</AudioFile>
+									<AudioFile>buttons too early too late  [2025-02-21 113352].wav</AudioFile>
 									<MediaIDList>
-										<MediaID ID="544525533"/>
+										<MediaID ID="701922673"/>
 									</MediaIDList>
 								</AudioFileSource>
 							</ChildrenList>
 							<ActiveSourceList>
-								<ActiveSource Name="button2 [2025-02-20 160302]" ID="{4CE6A10D-F76C-4B4D-94BA-6E3E4C8AAFBC}" Platform="Linked"/>
+								<ActiveSource Name="buttons too early too late  [2025-02-21 113352]" ID="{47158031-9B16-4007-863C-A8A4ED80683F}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="buttons_too_late" ID="{BE35B55B-C334-455E-A202-E23A67407DDA}" ShortID="840653861">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{EFBD4D6E-1C89-4DF3-A407-EE4869BB3BA7}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{20152C59-0859-490D-9296-C884B69967F9}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="buttons too early too late  [2025-02-21 113352]" ID="{4EE1BDCB-9497-4716-A0B8-A0B3B8A97703}">
+									<PropertyList>
+										<Property Name="FadeInDuration" Type="Real64" Value="0.00816054821341167"/>
+										<Property Name="FadeOutDuration" Type="Real64" Value="0.163210964268233"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="0.0571238374938816"/>
+										<Property Name="TrimEnd" Type="Real64" Value="0.88949975526187"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>buttons too early too late  [2025-02-21 113352].wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="722254932"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="buttons too early too late  [2025-02-21 113352]" ID="{4EE1BDCB-9497-4716-A0B8-A0B3B8A97703}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
 					</ChildrenList>
@@ -162,7 +237,7 @@
 						<Property Name="IsGlobalLimit" Type="int16" Value="1"/>
 						<Property Name="MakeUpGain" Type="Real64">
 							<ValueList>
-								<Value>7</Value>
+								<Value>4</Value>
 							</ValueList>
 						</Property>
 						<Property Name="MaxSoundPerInstance" Type="int16">

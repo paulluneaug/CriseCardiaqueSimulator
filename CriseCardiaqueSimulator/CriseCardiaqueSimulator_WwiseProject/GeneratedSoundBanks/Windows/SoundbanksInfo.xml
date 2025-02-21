@@ -35,7 +35,7 @@
 				</SwitchGroup>
 			</SwitchGroups>
 		</SoundBank>
-		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{83B48D75-C2F7-CBA9-A417-9A2343182E9F}">
+		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{9D9161A7-FB58-C388-630D-DEF93E458B12}">
 			<ShortName>main</ShortName>
 			<Path>main.bnk</Path>
 			<Media>
@@ -50,6 +50,14 @@
 				<File Id="544525533" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>button2 [2025-02-20 160302].wav</ShortName>
 					<CachePath>SFX/button2 [2025-02-20 160302]_1581C8CA.wem</CachePath>
+				</File>
+				<File Id="701922673" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>buttons too early too late  [2025-02-21 113352].wav</ShortName>
+					<CachePath>SFX/buttons too early too late  [2025-02-21 113352]_9ECBC2AF.wem</CachePath>
+				</File>
+				<File Id="722254932" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>buttons too early too late  [2025-02-21 113352].wav</ShortName>
+					<CachePath>SFX/buttons too early too late  [2025-02-21 113352]_5AF6371F.wem</CachePath>
 				</File>
 				<File Id="747798513" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>start [2025-02-20 160256].wav</ShortName>
@@ -74,9 +82,10 @@
 				</ShareSets>
 			</Plugins>
 			<Events>
-				<Event Id="2296794010" Name="Play_button_1" DurationType="OneShot" DurationMin="2.5813334" DurationMax="2.5813334">
+				<Event Id="3676383806" Name="Play_button_good" DurationType="OneShot" DurationMin="2.5813334" DurationMax="4.5124707">
 					<MediaRefs>
 						<MediaRef Id="181377064"/>
+						<MediaRef Id="544525533"/>
 					</MediaRefs>
 					<PluginRefs>
 						<ShareSets>
@@ -84,9 +93,19 @@
 						</ShareSets>
 					</PluginRefs>
 				</Event>
-				<Event Id="2296794009" Name="Play_button_2" DurationType="OneShot" DurationMin="4.5124707" DurationMax="4.5124707">
+				<Event Id="3025487729" Name="Play_button_too_early" DurationType="OneShot" DurationMin="0.79157317" DurationMax="0.79157317">
 					<MediaRefs>
-						<MediaRef Id="544525533"/>
+						<MediaRef Id="701922673"/>
+					</MediaRefs>
+					<PluginRefs>
+						<ShareSets>
+							<PluginRef Id="3147646715"/>
+						</ShareSets>
+					</PluginRefs>
+				</Event>
+				<Event Id="3781966448" Name="Play_button_too_late" DurationType="OneShot" DurationMin="0.83237594" DurationMax="0.83237594">
+					<MediaRefs>
+						<MediaRef Id="722254932"/>
 					</MediaRefs>
 					<PluginRefs>
 						<ShareSets>
@@ -143,6 +162,7 @@
 						<ActionSetSwitchEntry GroupId="4091656514" Id="1125500713" Name="intro"/>
 					</ActionSetSwitch>
 				</Event>
+				<Event Id="2904946146" Name="Play_stop_all" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 			</Events>
 			<GameParameters>
 				<GameParameter Id="1409130199" Name="RTPC_heartbeat_bpm"/>
@@ -159,5 +179,5 @@
 			</SwitchGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{DE4041E2-7F1E-A963-6E03-184CA5829827}</FileHash>
+	<FileHash>{AA978A3F-4D0A-72A9-0B94-D54C95A9C681}</FileHash>
 </SoundBanksInfo>

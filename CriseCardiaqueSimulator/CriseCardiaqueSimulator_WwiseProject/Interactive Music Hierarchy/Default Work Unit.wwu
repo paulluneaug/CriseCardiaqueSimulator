@@ -5,6 +5,11 @@
 			<ChildrenList>
 				<MusicSwitchContainer Name="Switch" ID="{CDC8824C-5E80-4D89-9286-1295830AE89D}" ShortID="251569857">
 					<PropertyList>
+						<Property Name="MakeUpGain" Type="Real64">
+							<ValueList>
+								<Value>-7</Value>
+							</ValueList>
+						</Property>
 						<Property Name="Tempo" Type="Real64" Value="175"/>
 					</PropertyList>
 					<ReferenceList>
@@ -1012,7 +1017,7 @@
 						<Property Name="EndPosition" Type="Real64" Value="6805.66666666667"/>
 						<Property Name="MakeUpGain" Type="Real64">
 							<ValueList>
-								<Value>-5</Value>
+								<Value>-7</Value>
 							</ValueList>
 						</Property>
 					</PropertyList>

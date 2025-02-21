@@ -50,6 +50,29 @@
 								</Reference>
 							</ReferenceList>
 						</Action>
+						<Action Name="" ID="{2ED27B74-C11F-4EDA-BE50-FC526B9C7B92}" ShortID="734179322">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="4"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="buttons" ID="{12BCCC83-9DEB-4E4E-A28F-2BD6CA31DEC9}" WorkUnitID="{9564804D-62E3-4657-961D-55D35419BB6C}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{B00A6066-E15F-4D5C-A1E9-07AB84DF9DCD}" ShortID="23226542">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="5"/>
+								<Property Name="Delay" Type="Real64" Value="1.5"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="buttons" ID="{12BCCC83-9DEB-4E4E-A28F-2BD6CA31DEC9}" WorkUnitID="{9564804D-62E3-4657-961D-55D35419BB6C}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
 					</ChildrenList>
 				</Event>
 				<Event Name="Play_set_intro" ID="{6D23A596-40E6-4610-B9A5-B240DD06A54E}">
@@ -101,29 +124,40 @@
 						</Action>
 					</ChildrenList>
 				</Event>
-				<Event Name="Play_button_1" ID="{1E37B548-C151-4B4F-B2F5-BC12BAC41C6D}">
+				<Event Name="Play_button_good" ID="{1E37B548-C151-4B4F-B2F5-BC12BAC41C6D}">
 					<ChildrenList>
-						<Action Name="" ID="{437C279C-4FD8-4045-B6B2-0096D3E8EB7F}" ShortID="855001739">
+						<Action Name="" ID="{2B18B8C4-3AB8-40A4-A588-A41B539D857B}" ShortID="775621252">
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="button1" ID="{42EA95EB-9E39-4650-B194-ECC6E8BA5D4B}" WorkUnitID="{9564804D-62E3-4657-961D-55D35419BB6C}"/>
-								</Reference>
-							</ReferenceList>
-						</Action>
-					</ChildrenList>
-				</Event>
-				<Event Name="Play_button_2" ID="{3DB6E45B-E974-4FCB-ADF5-510EA0961E5F}">
-					<ChildrenList>
-						<Action Name="" ID="{BD4EA581-64D9-4E0F-902D-DD82B1F9300E}" ShortID="1056922580">
-							<ReferenceList>
-								<Reference Name="Target">
-									<ObjectRef Name="button2" ID="{47211208-0CA0-4E3C-8EBE-D88B49F9E53D}" WorkUnitID="{9564804D-62E3-4657-961D-55D35419BB6C}"/>
+									<ObjectRef Name="buttons_good" ID="{45F7F066-4D18-4677-8370-B7333BFC851F}" WorkUnitID="{9564804D-62E3-4657-961D-55D35419BB6C}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
 					</ChildrenList>
 				</Event>
 				<Event Name="Play_stop_all" ID="{6014AC77-3CBF-4878-ACC8-48D5BDDFC880}"/>
+				<Event Name="Play_button_too_early" ID="{F01192D5-3A6A-4029-9592-327368C62AE6}">
+					<ChildrenList>
+						<Action Name="" ID="{0A64F6F2-BBAC-4CAC-9E09-7BB06AA06517}" ShortID="772754337">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="buttons_too_early" ID="{13E7D7A1-4A85-4F90-B844-C6D99A1FFB57}" WorkUnitID="{9564804D-62E3-4657-961D-55D35419BB6C}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_button_too_late" ID="{42710C2B-9A14-4229-B749-F69E5C30D4ED}">
+					<ChildrenList>
+						<Action Name="" ID="{293EC30F-D6BE-42A7-B3A4-63B2F95D2384}" ShortID="627022242">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="buttons_too_late" ID="{BE35B55B-C334-455E-A202-E23A67407DDA}" WorkUnitID="{9564804D-62E3-4657-961D-55D35419BB6C}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

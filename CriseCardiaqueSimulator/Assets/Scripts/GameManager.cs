@@ -118,12 +118,15 @@ public class GameManager : MonoBehaviour
                     case Timing.TooEarly:
                         Debug.LogWarning($"Applied DMX config Too Early");
                         currentconfig.SpotTooEarlyConfiguration.ApplyConfigration(m_arduinoManager);
+                        AkSoundEngine.PostEvent("Play_button_too_early", gameObject);
                         break;
                     case Timing.Good:
                         Debug.LogWarning($"Applied DMX config Good");
                         currentconfig.SpotGoodTimingConfiguration.ApplyConfigration(m_arduinoManager);
+                        AkSoundEngine.PostEvent("Play_button_good", gameObject);
                         break;
                     case Timing.TooLate:
+                        AkSoundEngine.PostEvent("Play_button_too_late", gameObject);
                         break;
                 }
             }
@@ -184,6 +187,7 @@ public class GameManager : MonoBehaviour
 
         m_lost = true;
         m_gameOverConfig.ApplyConfigration(m_arduinoManager);
+        AkSoundEngine.PostEvent("Play_set_gameover", gameObject);
     }
 
     #region Debug

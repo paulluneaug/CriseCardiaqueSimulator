@@ -13,12 +13,14 @@ namespace AK
 {
     namespace EVENTS
     {
-        static const AkUniqueID PLAY_BUTTON_1 = 2296794010U;
-        static const AkUniqueID PLAY_BUTTON_2 = 2296794009U;
+        static const AkUniqueID PLAY_BUTTON_GOOD = 3676383806U;
+        static const AkUniqueID PLAY_BUTTON_TOO_EARLY = 3025487729U;
+        static const AkUniqueID PLAY_BUTTON_TOO_LATE = 3781966448U;
         static const AkUniqueID PLAY_INIT_GAME = 3291290705U;
         static const AkUniqueID PLAY_SET_GAME = 1376856651U;
         static const AkUniqueID PLAY_SET_GAMEOVER = 842556545U;
         static const AkUniqueID PLAY_SET_INTRO = 3245586965U;
+        static const AkUniqueID PLAY_STOP_ALL = 2904946146U;
     } // namespace EVENTS
 
     namespace SWITCHES

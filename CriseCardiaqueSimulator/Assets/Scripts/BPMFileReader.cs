@@ -7,6 +7,7 @@ using UnityUtility.Timer;
 public class BPMFileReader : MonoBehaviour
 {
     public int CurrentBPM => m_currentBPM;
+    public AK.Wwise.RTPC RTPC_Heartbeat_bpm;
 
     [SerializeField] private string m_bpmFilePath;
     [SerializeField] private Timer m_reloadFrequency;
@@ -22,6 +23,7 @@ public class BPMFileReader : MonoBehaviour
         if (m_reloadFrequency.Update(Time.deltaTime))
         {
             string bpmFileContent = File.ReadAllText(m_bpmFilePath);
+            RTPC_Heartbeat_bpm.SetGlobalValue(CurrentBPM);
             if (!int.TryParse(bpmFileContent, out m_currentBPM))
             {
                 Debug.LogError("Failed to parse the BPM file \nFile content : {bpmFileContent}");
