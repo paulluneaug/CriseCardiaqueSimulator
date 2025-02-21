@@ -138,7 +138,10 @@ public class ArduinoConnectorManager : MonoBehaviour
 
         byte errorCode = recievedDatas.Dequeue();
 
-        Debug.LogError($"ArduinoError recieved : {errorCode}");
+        if (errorCode != 0)
+        {
+            Debug.LogError($"ArduinoError recieved : {errorCode}");
+        }
         return true; // The command was processed and removed from the queue
     }
 

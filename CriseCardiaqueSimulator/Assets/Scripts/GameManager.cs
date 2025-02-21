@@ -1,5 +1,7 @@
 using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 using UnityUtility.CustomAttributes;
 using UnityUtility.SerializedDictionary;
 
@@ -16,12 +18,24 @@ public class GameManager : MonoBehaviour
         [Space]
         //[Button(nameof(ApplyButton1DMXSpotConfig), "Apply configuration")]
         public DMXSpotConfiguration SpotGoodTimingConfiguration;
+
+        [Title("Side Panel")]
+        public Image SidePanel;
+        public Color TooEarlyColor;
+        public Color GoodColor;
+    }
+
+    private enum GameState
+    {
+        Tuto,
+        MainLoop,
+        End,
     }
 
     private enum Button
     {
-        Button0,
-        Button1,
+        Button0 = 0,
+        Button1 = 1,
     }
 
     private enum Timing
@@ -53,7 +67,8 @@ public class GameManager : MonoBehaviour
 
 
     // Cache
-    [NonSerialized] private bool m_lost;
+    [NonSerialized] private GameState m_gameState;
+    [NonSerialized] private bool[] m_tutoButtonPressedOnce;
     [NonSerialized] private float m_score;
 
     [NonSerialized] private Button m_currentButton;
@@ -68,7 +83,7 @@ public class GameManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        m_lost = false;
+        m_gameState = GameState.Tuto;
         m_score = 0.0f;
         m_scoreTextController.UpdateText(m_score);
 
@@ -78,15 +93,26 @@ public class GameManager : MonoBehaviour
         SetupNextButtonClick();
         
         m_buttonConfigs[Button.Button0].GetButtonState = () => m_arduinoManager.Button0State;
+        m_buttonConfigs[Button.Button0].SidePanel.gameObject.SetActive(false);
         m_buttonConfigs[Button.Button1].GetButtonState = () => m_arduinoManager.Button1State;
+        m_buttonConfigs[Button.Button1].SidePanel.gameObject.SetActive(false);
+
+        m_tutoButtonPressedOnce = new bool[2];
+        m_tutoButtonPressedOnce[0] = false;
+        m_tutoButtonPressedOnce[1] = false;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            ReloadGame();
+        }
+
         if (!m_lost)
         {
-            ButtonConfig currentconfig = m_buttonConfigs[m_currentButton];
+            ButtonConfig currentConfig = m_buttonConfigs[m_currentButton];
 
             m_score += m_scoringPerSecondOverBPM.Evaluate(m_bpmFileReader.CurrentBPM);
             m_scoreTextController.UpdateText(m_score);
@@ -117,16 +143,24 @@ public class GameManager : MonoBehaviour
                 {
                     case Timing.TooEarly:
                         Debug.LogWarning($"Applied DMX config Too Early");
-                        currentconfig.SpotTooEarlyConfiguration.ApplyConfigration(m_arduinoManager);
+                        currentConfig.SpotTooEarlyConfiguration.ApplyConfigration(m_arduinoManager);
                         AkSoundEngine.PostEvent("Play_button_too_early", gameObject);
+
+                        currentConfig.SidePanel.gameObject.SetActive(true);
+                        currentConfig.SidePanel.color = currentConfig.TooEarlyColor;
                         break;
                     case Timing.Good:
                         Debug.LogWarning($"Applied DMX config Good");
-                        currentconfig.SpotGoodTimingConfiguration.ApplyConfigration(m_arduinoManager);
+                        currentConfig.SpotGoodTimingConfiguration.ApplyConfigration(m_arduinoManager);
                         AkSoundEngine.PostEvent("Play_button_good", gameObject);
+
+                        currentConfig.SidePanel.gameObject.SetActive(true);
+                        currentConfig.SidePanel.color = currentConfig.GoodColor;
                         break;
                     case Timing.TooLate:
                         AkSoundEngine.PostEvent("Play_button_too_late", gameObject);
+                        currentConfig.SidePanel.gameObject.SetActive(true);
+                        currentConfig.SidePanel.color = currentConfig.TooEarlyColor;
                         break;
                 }
             }
@@ -137,8 +171,10 @@ public class GameManager : MonoBehaviour
                 return;
             }
 
-            if (currentconfig.GetButtonState())
+            if (currentConfig.GetButtonState())
             {
+                Debug.LogWarning($"Button {m_currentButton} pressed");
+                currentConfig.SidePanel.gameObject.SetActive(false);
                 switch (timing)
                 {
                     case Timing.TooEarly:
@@ -152,8 +188,12 @@ public class GameManager : MonoBehaviour
                         break;
                 }
             }
-
         }
+    }
+
+    private void ReloadGame()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     private void SetupNextButtonClick()
