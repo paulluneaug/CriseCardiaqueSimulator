@@ -16,6 +16,7 @@ namespace AK
         static const AkUniqueID PLAY_BUTTON_GOOD = 3676383806U;
         static const AkUniqueID PLAY_BUTTON_TOO_EARLY = 3025487729U;
         static const AkUniqueID PLAY_BUTTON_TOO_LATE = 3781966448U;
+        static const AkUniqueID PLAY_GAMEREADY = 1010471913U;
         static const AkUniqueID PLAY_INIT_GAME = 3291290705U;
         static const AkUniqueID PLAY_MUTE_MUSIC = 1340738297U;
         static const AkUniqueID PLAY_SET_GAME = 1376856651U;

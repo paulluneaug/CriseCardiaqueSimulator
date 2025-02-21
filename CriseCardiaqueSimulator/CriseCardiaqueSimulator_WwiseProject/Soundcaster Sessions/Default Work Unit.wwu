@@ -34,7 +34,7 @@
 					</RTPCValueList>
 					<CurrentStateList ShowAll="true"/>
 					<CurrentSwitchList ShowAll="true">
-						<CurrentSwitchRef Name="intro" ID="{7D96EE97-E853-41CD-8837-9B578ABD238C}"/>
+						<CurrentSwitchRef Name="game" ID="{226887AC-979C-454F-BECD-5D5B3D6E3C29}"/>
 					</CurrentSwitchList>
 				</SoundcasterSession>
 			</ChildrenList>

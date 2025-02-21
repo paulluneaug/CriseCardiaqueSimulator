@@ -66,7 +66,7 @@ MonoBehaviour:
     ParentPath: SoundBanks\Default Work Unit
     guid: 232071167ea1434cb2ce0428f47f01f5
     GuidInternal: 
-    m_lastTime: -8584614594613741854
+    m_lastTime: -8584614533901194868
     List:
     - name: main
       guid: 5e48521fa0a374449d96226dd5251358
@@ -94,7 +94,7 @@ MonoBehaviour:
     ParentPath: Events\Default Work Unit
     guid: 6c132b5e8bcaa548b4c0979ce5d358ec
     GuidInternal: 
-    m_lastTime: -8584614594616666218
+    m_lastTime: -8584614533790836773
     List:
     - name: Play_button_good
       guid: 48b5371e51c14f4bb2f5bc12bac41c6d
@@ -147,6 +147,23 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 0.83237594
       minDuration: 0.83237594
+    - name: Play_gameready
+      guid: 5f8a9b5d65861a40a5a3f6cb96af97b1
+      id: 1010471913
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 6c132b5e8bcaa548b4c0979ce5d358ec
+      - ElementName: Play_gameready
+        ObjectType: 3
+        guid: 5f8a9b5d65861a40a5a3f6cb96af97b1
+      Path: Events\Default Work Unit\Play_gameready
+      maxAttenuation: 0
+      maxDuration: 4.8383203
+      minDuration: 4.8383203
     - name: Play_init_game
       guid: 8aa17626ff842141b891fb4b917ce4a0
       id: 3291290705
@@ -164,6 +181,23 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
+    - name: Play_mute_music
+      guid: 996eee39c36b6f48bc36bf20be642aee
+      id: 1340738297
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 6c132b5e8bcaa548b4c0979ce5d358ec
+      - ElementName: Play_mute_music
+        ObjectType: 3
+        guid: 996eee39c36b6f48bc36bf20be642aee
+      Path: Events\Default Work Unit\Play_mute_music
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
     - name: Play_set_game
       guid: 103c37aba61eaa46b71cd2bc66dcf8e9
       id: 1376856651
@@ -229,6 +263,23 @@ MonoBehaviour:
         ObjectType: 3
         guid: 77ac1460bf3c7848acc848d5bddfc880
       Path: Events\Default Work Unit\Play_stop_all
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Play_unmute_music
+      guid: ed08f90b56083545aa9b57a09d276984
+      id: 1426335544
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 6c132b5e8bcaa548b4c0979ce5d358ec
+      - ElementName: Play_unmute_music
+        ObjectType: 3
+        guid: ed08f90b56083545aa9b57a09d276984
+      Path: Events\Default Work Unit\Play_unmute_music
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
