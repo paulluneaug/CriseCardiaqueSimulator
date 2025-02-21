@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityUtility.CustomAttributes;
 using UnityUtility.SerializedDictionary;
+using UnityUtility.Timer;
 
 public class GameManager : MonoBehaviour
 {
@@ -29,6 +30,7 @@ public class GameManager : MonoBehaviour
     private enum GameState
     {
         Tuto,
+        Countdown,
         MainLoop,
         End,
     }
@@ -63,11 +65,21 @@ public class GameManager : MonoBehaviour
     [SerializeField] private DMXSpotConfiguration m_gameOverConfig;
 
     [Title("UI")]
+    [SerializeField] private RectTransform m_heartRateScorePanel;
     [SerializeField] private UITextController m_bpmTextController;
     [SerializeField] private UITextController m_scoreTextController;
 
+    [SerializeField] private UITextController m_startTextController;
+    [SerializeField] private UITextController m_endScoreTextController;
+    [SerializeField] private Image m_background;
+
+    [SerializeField] private Timer m_countdownStepTimer;
+    [SerializeField] private string[] m_countdownSteps;
+
 
     // Cache
+    [SerializeField] private int m_countdownStepPassed;
+
     [NonSerialized] private GameState m_gameState;
     [NonSerialized] private bool[] m_tutoButtonPressedOnce;
     [NonSerialized] private float m_score;
@@ -101,6 +113,11 @@ public class GameManager : MonoBehaviour
         m_tutoButtonPressedOnce[1] = false;
 
         m_mute = false;
+
+        m_startTextController.gameObject.SetActive(false);
+        m_endScoreTextController.gameObject.SetActive(false);
+        m_background.gameObject.SetActive(false);
+        m_heartRateScorePanel.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -132,6 +149,9 @@ public class GameManager : MonoBehaviour
             case GameState.Tuto:
                 UpdateTuto();
                 break;
+            case GameState.Countdown:
+                UpdateCountdown();
+                break;
             case GameState.MainLoop:
                 UpdateMainLoop();
                 break;
@@ -146,13 +166,7 @@ public class GameManager : MonoBehaviour
             !m_buttonConfigs[Button.Button0].GetButtonState() && 
             !m_buttonConfigs[Button.Button1].GetButtonState())
         {
-            m_gameState = GameState.MainLoop;
-            Debug.LogError("Switch state To Mainloop");
-
-
-            m_currentButton = Button.Button0;
-            SetupNextButtonClick();
-            AkSoundEngine.PostEvent("Play_set_game", gameObject);
+            StartCountdown();
             return;
         }
 
@@ -164,6 +178,49 @@ public class GameManager : MonoBehaviour
         if (m_buttonConfigs[Button.Button1].GetButtonState())
         {
             m_tutoButtonPressedOnce[(int)Button.Button1] = true;
+        }
+    }
+
+    private void StartCountdown()
+    {
+        m_gameState = GameState.Countdown;
+        Debug.LogError("Switch state To Countdown");
+
+        m_countdownStepPassed = 0;
+        m_countdownStepTimer.Start();
+        m_startTextController.UpdateText(m_countdownSteps[m_countdownStepPassed]);
+
+        m_startTextController.gameObject.SetActive(true);
+        m_background.gameObject.SetActive(true);
+        m_heartRateScorePanel.gameObject.SetActive(false);
+    }
+
+    private void StartMainloop()
+    {
+        m_gameState = GameState.MainLoop;
+        Debug.LogError("Switch state To Mainloop");
+
+        m_startTextController.gameObject.SetActive(false);
+        m_background.gameObject.SetActive(false);
+        m_heartRateScorePanel.gameObject.SetActive(true);
+
+        m_currentButton = Button.Button0;
+        SetupNextButtonClick();
+        AkSoundEngine.PostEvent("Play_set_game", gameObject);
+    }
+
+    private void UpdateCountdown()
+    {
+        if (m_countdownStepTimer.Update(Time.deltaTime))
+        {
+            m_countdownStepPassed++;
+            if (m_countdownStepPassed >= m_countdownSteps.Length)
+            {
+                m_countdownStepTimer.Stop();
+                StartMainloop();
+                return;
+            }
+            m_startTextController.UpdateText(m_countdownSteps[m_countdownStepPassed]);
         }
     }
 
@@ -283,6 +340,12 @@ public class GameManager : MonoBehaviour
 
         m_gameState = GameState.End;
         m_gameOverConfig.ApplyConfigration(m_arduinoManager);
+
+        m_background.gameObject.SetActive(true);
+        m_endScoreTextController.gameObject.SetActive(true);
+        m_endScoreTextController.UpdateText(m_score);
+        m_heartRateScorePanel.gameObject.SetActive(false);
+
         AkSoundEngine.PostEvent("Play_set_gameover", gameObject);
     }
 
