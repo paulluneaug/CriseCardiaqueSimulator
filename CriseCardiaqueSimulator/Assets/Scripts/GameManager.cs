@@ -61,6 +61,13 @@ public class GameManager : MonoBehaviour
     [SerializeField] private SerializedDictionary<Button, ButtonConfig> m_buttonConfigs;
 
     [Title("Addtional DMX Configs")]
+    [Button(nameof(ApplyButton0GoodDMXSpotConfig))]
+    [Button(nameof(ApplyButton0TooEarlyDMXSpotConfig))]
+    [Button(nameof(ApplyButton1GoodDMXSpotConfig))]
+    [Button(nameof(ApplyButton1TooEarlyDMXSpotConfig))]
+    [Button(nameof(ApplyGameOverDMXSpotConfig))]
+    [Button(nameof(ApplyGameStartDMXSpotConfig))]
+
     [SerializeField] private DMXSpotConfiguration m_gameStartConfig;
     [SerializeField] private DMXSpotConfiguration m_gameOverConfig;
 
@@ -350,21 +357,53 @@ public class GameManager : MonoBehaviour
     }
 
     #region Debug
-    //private void ApplyButton0DMXSpotConfig()
-    //{
-    //    if (!Application.isPlaying)
-    //    {
-    //        return;
-    //    }
-    //    m_button0SpotConfiguration.ApplyConfigration(m_arduinoManager);
-    //}
-    //private void ApplyButton1DMXSpotConfig()
-    //{
-    //    if (!Application.isPlaying)
-    //    {
-    //        return;
-    //    }
-    //    m_button1SpotConfiguration.ApplyConfigration(m_arduinoManager);
-    //}
+    private void ApplyButton0GoodDMXSpotConfig()
+    {
+        if (!Application.isPlaying)
+        {
+            return;
+        }
+        m_buttonConfigs[Button.Button0].SpotGoodTimingConfiguration.ApplyConfigration(m_arduinoManager);
+    }
+    private void ApplyButton0TooEarlyDMXSpotConfig()
+    {
+        if (!Application.isPlaying)
+        {
+            return;
+        }
+        m_buttonConfigs[Button.Button0].SpotTooEarlyConfiguration.ApplyConfigration(m_arduinoManager);
+    }
+    private void ApplyButton1GoodDMXSpotConfig()
+    {
+        if (!Application.isPlaying)
+        {
+            return;
+        }
+        m_buttonConfigs[Button.Button1].SpotGoodTimingConfiguration.ApplyConfigration(m_arduinoManager);
+    }
+    private void ApplyButton1TooEarlyDMXSpotConfig()
+    {
+        if (!Application.isPlaying)
+        {
+            return;
+        }
+        m_buttonConfigs[Button.Button1].SpotTooEarlyConfiguration.ApplyConfigration(m_arduinoManager);
+    }
+    private void ApplyGameStartDMXSpotConfig()
+    {
+        if (!Application.isPlaying)
+        {
+            return;
+        }
+        m_gameStartConfig.ApplyConfigration(m_arduinoManager);
+    }
+    private void ApplyGameOverDMXSpotConfig()
+    {
+        if (!Application.isPlaying)
+        {
+            return;
+        }
+        m_gameOverConfig.ApplyConfigration(m_arduinoManager);
+    }
     #endregion
 }
