@@ -1,9 +1,7 @@
 using System;
 using UnityEngine;
-using UnityEngine.Rendering.Universal;
 using UnityUtility.CustomAttributes;
 using UnityUtility.SerializedDictionary;
-using UnityUtility.Utils;
 
 public class GameManager : MonoBehaviour
 {
@@ -49,6 +47,10 @@ public class GameManager : MonoBehaviour
     [SerializeField] private DMXSpotConfiguration m_gameStartConfig;
     [SerializeField] private DMXSpotConfiguration m_gameOverConfig;
 
+    [Title("UI")]
+    [SerializeField] private UITextController m_bpmTextController;
+    [SerializeField] private UITextController m_scoreTextController;
+
 
     // Cache
     [NonSerialized] private bool m_lost;
@@ -68,6 +70,7 @@ public class GameManager : MonoBehaviour
     {
         m_lost = false;
         m_score = 0.0f;
+        m_scoreTextController.UpdateText(m_score);
 
         m_gameStartConfig.ApplyConfigration(m_arduinoManager);
 
@@ -86,6 +89,9 @@ public class GameManager : MonoBehaviour
             ButtonConfig currentconfig = m_buttonConfigs[m_currentButton];
 
             m_score += m_scoringPerSecondOverBPM.Evaluate(m_bpmFileReader.CurrentBPM);
+            m_scoreTextController.UpdateText(m_score);
+
+            m_bpmTextController.UpdateText(m_bpmFileReader.CurrentBPM);
 
             float pressTimeRelativeToPerfect = Time.time - m_lastButtonPressTime - m_nextTimeToClick;
 
