@@ -9,7 +9,7 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{9DA67A18-5BF9-D131-C4ED-103D003B4C8B}">
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{3FD758C1-EABA-7A7B-6E9B-B2B0810E81D1}">
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 			<Plugins>
@@ -25,6 +25,15 @@
 				<GameParameter Id="1409130199" Name="RTPC_heartbeat_bpm"/>
 				<GameParameter Id="2951868199" Name="RTPC_button_meter_duck"/>
 			</GameParameters>
+			<StateGroups>
+				<StateGroup Id="2798074986" Name="music_muted">
+					<States>
+						<State Id="748895195" Name="None"/>
+						<State Id="3763503965" Name="unmuted"/>
+						<State Id="3791155954" Name="muted"/>
+					</States>
+				</StateGroup>
+			</StateGroups>
 			<SwitchGroups>
 				<SwitchGroup Id="4091656514" Name="gamestate">
 					<Switches>
@@ -35,7 +44,7 @@
 				</SwitchGroup>
 			</SwitchGroups>
 		</SoundBank>
-		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{9D9161A7-FB58-C388-630D-DEF93E458B12}">
+		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{57B249BA-A242-9A4C-0DA2-0CF2E3B34848}">
 			<ShortName>main</ShortName>
 			<Path>main.bnk</Path>
 			<Media>
@@ -53,11 +62,11 @@
 				</File>
 				<File Id="701922673" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>buttons too early too late  [2025-02-21 113352].wav</ShortName>
-					<CachePath>SFX/buttons too early too late  [2025-02-21 113352]_9ECBC2AF.wem</CachePath>
+					<CachePath>SFX/buttons too early too late  [2025-02-21 113352]_4084D19C.wem</CachePath>
 				</File>
 				<File Id="722254932" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>buttons too early too late  [2025-02-21 113352].wav</ShortName>
-					<CachePath>SFX/buttons too early too late  [2025-02-21 113352]_5AF6371F.wem</CachePath>
+					<CachePath>SFX/buttons too early too late  [2025-02-21 113352]_1C8F5133.wem</CachePath>
 				</File>
 				<File Id="747798513" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>start [2025-02-20 160256].wav</ShortName>
@@ -140,9 +149,17 @@
 							</MediaRefs>
 						</SwitchContainer>
 					</SwitchContainers>
+					<ActionSetState>
+						<ActionSetStateEntry GroupId="2798074986" Id="3763503965" Name="unmuted"/>
+					</ActionSetState>
 					<ActionSetSwitch>
 						<ActionSetSwitchEntry GroupId="4091656514" Id="1125500713" Name="intro"/>
 					</ActionSetSwitch>
+				</Event>
+				<Event Id="1340738297" Name="Play_mute_music" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0">
+					<ActionSetState>
+						<ActionSetStateEntry GroupId="2798074986" Id="3791155954" Name="muted"/>
+					</ActionSetState>
 				</Event>
 				<Event Id="1376856651" Name="Play_set_game" DurationType="OneShot" DurationMin="4.901647" DurationMax="4.901647">
 					<MediaRefs>
@@ -163,11 +180,25 @@
 					</ActionSetSwitch>
 				</Event>
 				<Event Id="2904946146" Name="Play_stop_all" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="1426335544" Name="Play_unmute_music" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0">
+					<ActionSetState>
+						<ActionSetStateEntry GroupId="2798074986" Id="3763503965" Name="unmuted"/>
+					</ActionSetState>
+				</Event>
 			</Events>
 			<GameParameters>
 				<GameParameter Id="1409130199" Name="RTPC_heartbeat_bpm"/>
 				<GameParameter Id="2951868199" Name="RTPC_button_meter_duck"/>
 			</GameParameters>
+			<StateGroups>
+				<StateGroup Id="2798074986" Name="music_muted">
+					<States>
+						<State Id="748895195" Name="None"/>
+						<State Id="3763503965" Name="unmuted"/>
+						<State Id="3791155954" Name="muted"/>
+					</States>
+				</StateGroup>
+			</StateGroups>
 			<SwitchGroups>
 				<SwitchGroup Id="4091656514" Name="gamestate">
 					<Switches>
@@ -179,5 +210,5 @@
 			</SwitchGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{AA978A3F-4D0A-72A9-0B94-D54C95A9C681}</FileHash>
+	<FileHash>{B19DD782-AFA0-363E-A60D-63F7B6C7EC84}</FileHash>
 </SoundBanksInfo>

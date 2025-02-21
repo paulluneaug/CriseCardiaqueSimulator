@@ -1,6 +1,8 @@
 Event	ID	Name			Wwise Object Path	Notes
 	842556545	Play_set_gameover			\Default Work Unit\Play_set_gameover	
+	1340738297	Play_mute_music			\Default Work Unit\Play_mute_music	
 	1376856651	Play_set_game			\Default Work Unit\Play_set_game	
+	1426335544	Play_unmute_music			\Default Work Unit\Play_unmute_music	
 	2904946146	Play_stop_all			\Default Work Unit\Play_stop_all	
 	3025487729	Play_button_too_early			\Default Work Unit\Play_button_too_early	
 	3245586965	Play_set_intro			\Default Work Unit\Play_set_intro	
@@ -16,6 +18,14 @@ Switch	ID	Name	Switch Group			Notes
 	1125500713	intro	gamestate			
 	4158285989	gameover	gamestate			
 
+State Group	ID	Name			Wwise Object Path	Notes
+	2798074986	music_muted			\Default Work Unit\music_muted	
+
+State	ID	Name	State Group			Notes
+	748895195	None	music_muted			
+	3763503965	unmuted	music_muted			
+	3791155954	muted	music_muted			
+
 Game Parameter	ID	Name			Wwise Object Path	Notes
 	1409130199	RTPC_heartbeat_bpm			\Default Work Unit\RTPC_heartbeat_bpm	
 	2951868199	RTPC_button_meter_duck			\Default Work Unit\RTPC_button_meter_duck	
@@ -27,8 +37,8 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	181377064	button1	C:\Users\Artik\CriseCardiaqueSimulator\CriseCardiaqueSimulator\CriseCardiaqueSimulator_WwiseProject\.cache\Windows\SFX\button1 [2025-02-20 160300]_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\buttons\buttons_good\button1		495712
 	267548320	out	C:\Users\Artik\CriseCardiaqueSimulator\CriseCardiaqueSimulator\CriseCardiaqueSimulator_WwiseProject\.cache\Windows\SFX\beat out-glued_B619FD06.wem		\Actor-Mixer Hierarchy\Default Work Unit\heartbeat\out		96096
 	544525533	button2	C:\Users\Artik\CriseCardiaqueSimulator\CriseCardiaqueSimulator\CriseCardiaqueSimulator_WwiseProject\.cache\Windows\SFX\button2 [2025-02-20 160302]_1581C8CA.wem		\Actor-Mixer Hierarchy\Default Work Unit\buttons\buttons_good\button2		866492
-	701922673	buttons_too_early	C:\Users\Artik\CriseCardiaqueSimulator\CriseCardiaqueSimulator\CriseCardiaqueSimulator_WwiseProject\.cache\Windows\SFX\buttons too early too late  [2025-02-21 113352]_9ECBC2AF.wem		\Actor-Mixer Hierarchy\Default Work Unit\buttons\buttons_too_early		152076
-	722254932	buttons_too_late	C:\Users\Artik\CriseCardiaqueSimulator\CriseCardiaqueSimulator\CriseCardiaqueSimulator_WwiseProject\.cache\Windows\SFX\buttons too early too late  [2025-02-21 113352]_5AF6371F.wem		\Actor-Mixer Hierarchy\Default Work Unit\buttons\buttons_too_late		159912
+	701922673	buttons_too_early	C:\Users\Artik\CriseCardiaqueSimulator\CriseCardiaqueSimulator\CriseCardiaqueSimulator_WwiseProject\.cache\Windows\SFX\buttons too early too late  [2025-02-21 113352]_4084D19C.wem		\Actor-Mixer Hierarchy\Default Work Unit\buttons\buttons_too_early		152076
+	722254932	buttons_too_late	C:\Users\Artik\CriseCardiaqueSimulator\CriseCardiaqueSimulator\CriseCardiaqueSimulator_WwiseProject\.cache\Windows\SFX\buttons too early too late  [2025-02-21 113352]_1C8F5133.wem		\Actor-Mixer Hierarchy\Default Work Unit\buttons\buttons_too_late		159912
 	747798513	start new game	C:\Users\Artik\CriseCardiaqueSimulator\CriseCardiaqueSimulator\CriseCardiaqueSimulator_WwiseProject\.cache\Windows\SFX\start [2025-02-20 160256]_231FCA4C.wem		\Actor-Mixer Hierarchy\Default Work Unit\start new game		941212
 	937410076	loop segment	C:\Users\Artik\CriseCardiaqueSimulator\CriseCardiaqueSimulator\CriseCardiaqueSimulator_WwiseProject\.cache\Windows\SFX\Heart Attack Simulator - 175_FBC78EF0.wem		\Interactive Music Hierarchy\Default Work Unit\Switch\loop\loop segment		22118496
 	982833217	in	C:\Users\Artik\CriseCardiaqueSimulator\CriseCardiaqueSimulator\CriseCardiaqueSimulator_WwiseProject\.cache\Windows\SFX\beat in-glued_F21BDA8C.wem		\Actor-Mixer Hierarchy\Default Work Unit\heartbeat\in		96096

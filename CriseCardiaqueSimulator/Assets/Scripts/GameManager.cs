@@ -79,6 +79,7 @@ public class GameManager : MonoBehaviour
     [NonSerialized] private float m_nextRangeToClick;
 
     [NonSerialized] private float m_lastButtonPressTime;
+    [NonSerialized] private bool m_mute;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -98,6 +99,8 @@ public class GameManager : MonoBehaviour
         m_tutoButtonPressedOnce = new bool[2];
         m_tutoButtonPressedOnce[0] = false;
         m_tutoButtonPressedOnce[1] = false;
+
+        m_mute = false;
     }
 
     // Update is called once per frame
@@ -106,6 +109,21 @@ public class GameManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.R))
         {
             ReloadGame();
+            return;
+        }
+
+        if(Input.GetKeyDown(KeyCode.T))
+        {
+            m_mute = !m_mute;
+            if (m_mute)
+            {
+                AkSoundEngine.PostEvent("Play_mute_music", gameObject);
+            }
+            else
+            {
+
+                AkSoundEngine.PostEvent("Play_unmute_music", gameObject);
+            }
         }
 
         m_bpmTextController.UpdateText(m_bpmFileReader.CurrentBPM);
@@ -134,6 +152,7 @@ public class GameManager : MonoBehaviour
 
             m_currentButton = Button.Button0;
             SetupNextButtonClick();
+            AkSoundEngine.PostEvent("Play_set_game", gameObject);
             return;
         }
 
@@ -230,6 +249,7 @@ public class GameManager : MonoBehaviour
     private void ReloadGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        AkSoundEngine.PostEvent("Play_stop_All", gameObject);
     }
 
     private void SetupNextButtonClick()

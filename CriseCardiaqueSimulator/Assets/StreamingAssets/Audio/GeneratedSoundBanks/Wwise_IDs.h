@@ -17,11 +17,29 @@ namespace AK
         static const AkUniqueID PLAY_BUTTON_TOO_EARLY = 3025487729U;
         static const AkUniqueID PLAY_BUTTON_TOO_LATE = 3781966448U;
         static const AkUniqueID PLAY_INIT_GAME = 3291290705U;
+        static const AkUniqueID PLAY_MUTE_MUSIC = 1340738297U;
         static const AkUniqueID PLAY_SET_GAME = 1376856651U;
         static const AkUniqueID PLAY_SET_GAMEOVER = 842556545U;
         static const AkUniqueID PLAY_SET_INTRO = 3245586965U;
         static const AkUniqueID PLAY_STOP_ALL = 2904946146U;
+        static const AkUniqueID PLAY_UNMUTE_MUSIC = 1426335544U;
     } // namespace EVENTS
+
+    namespace STATES
+    {
+        namespace MUSIC_MUTED
+        {
+            static const AkUniqueID GROUP = 2798074986U;
+
+            namespace STATE
+            {
+                static const AkUniqueID MUTED = 3791155954U;
+                static const AkUniqueID NONE = 748895195U;
+                static const AkUniqueID UNMUTED = 3763503965U;
+            } // namespace STATE
+        } // namespace MUSIC_MUTED
+
+    } // namespace STATES
 
     namespace SWITCHES
     {
