@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -88,9 +89,6 @@ public class GameManager : MonoBehaviour
         m_scoreTextController.UpdateText(m_score);
 
         m_gameStartConfig.ApplyConfigration(m_arduinoManager);
-
-        m_currentButton = Button.Button0;
-        SetupNextButtonClick();
         
         m_buttonConfigs[Button.Button0].GetButtonState = () => m_arduinoManager.Button0State;
         m_buttonConfigs[Button.Button0].SidePanel.gameObject.SetActive(false);
@@ -110,83 +108,121 @@ public class GameManager : MonoBehaviour
             ReloadGame();
         }
 
-        if (!m_lost)
+        m_bpmTextController.UpdateText(m_bpmFileReader.CurrentBPM);
+        switch (m_gameState)
         {
-            ButtonConfig currentConfig = m_buttonConfigs[m_currentButton];
+            case GameState.Tuto:
+                UpdateTuto();
+                break;
+            case GameState.MainLoop:
+                UpdateMainLoop();
+                break;
+            case GameState.End:
+                break;
+        }
+    }
 
-            m_score += m_scoringPerSecondOverBPM.Evaluate(m_bpmFileReader.CurrentBPM);
-            m_scoreTextController.UpdateText(m_score);
+    private void UpdateTuto()
+    {
+        if (m_tutoButtonPressedOnce.All(b => b) && 
+            !m_buttonConfigs[Button.Button0].GetButtonState() && 
+            !m_buttonConfigs[Button.Button1].GetButtonState())
+        {
+            m_gameState = GameState.MainLoop;
+            Debug.LogError("Switch state To Mainloop");
 
-            m_bpmTextController.UpdateText(m_bpmFileReader.CurrentBPM);
 
-            float pressTimeRelativeToPerfect = Time.time - m_lastButtonPressTime - m_nextTimeToClick;
+            m_currentButton = Button.Button0;
+            SetupNextButtonClick();
+            return;
+        }
 
-            Timing timing;
-            if (pressTimeRelativeToPerfect < -m_nextRangeToClick)
+        if (m_buttonConfigs[Button.Button0].GetButtonState())
+        {
+            m_tutoButtonPressedOnce[(int)Button.Button0] = true;
+        }
+
+        if (m_buttonConfigs[Button.Button1].GetButtonState())
+        {
+            m_tutoButtonPressedOnce[(int)Button.Button1] = true;
+        }
+    }
+
+    private void UpdateMainLoop()
+    {
+        ButtonConfig currentConfig = m_buttonConfigs[m_currentButton];
+
+        m_score += m_scoringPerSecondOverBPM.Evaluate(m_bpmFileReader.CurrentBPM);
+        m_scoreTextController.UpdateText(m_score);
+
+
+        float pressTimeRelativeToPerfect = Time.time - m_lastButtonPressTime - m_nextTimeToClick;
+
+        Timing timing;
+        if (pressTimeRelativeToPerfect < -m_nextRangeToClick)
+        {
+            timing = Timing.TooEarly;
+        }
+        else if (m_nextRangeToClick < pressTimeRelativeToPerfect)
+        {
+            timing = Timing.TooLate;
+        }
+        else
+        {
+            timing = Timing.Good;
+        }
+
+        if (timing != m_previousTiming)
+        {
+            Debug.LogWarning($"Different Timing ({timing} and {m_previousTiming})");
+            m_previousTiming = timing;
+            switch (timing)
             {
-                timing = Timing.TooEarly;
+                case Timing.TooEarly:
+                    Debug.LogWarning($"Applied DMX config Too Early");
+                    currentConfig.SpotTooEarlyConfiguration.ApplyConfigration(m_arduinoManager);
+                    AkSoundEngine.PostEvent("Play_button_too_early", gameObject);
+
+                    currentConfig.SidePanel.gameObject.SetActive(true);
+                    currentConfig.SidePanel.color = currentConfig.TooEarlyColor;
+                    break;
+                case Timing.Good:
+                    Debug.LogWarning($"Applied DMX config Good");
+                    currentConfig.SpotGoodTimingConfiguration.ApplyConfigration(m_arduinoManager);
+                    AkSoundEngine.PostEvent("Play_button_good", gameObject);
+
+                    currentConfig.SidePanel.gameObject.SetActive(true);
+                    currentConfig.SidePanel.color = currentConfig.GoodColor;
+                    break;
+                case Timing.TooLate:
+                    AkSoundEngine.PostEvent("Play_button_too_late", gameObject);
+                    currentConfig.SidePanel.gameObject.SetActive(true);
+                    currentConfig.SidePanel.color = currentConfig.TooEarlyColor;
+                    break;
             }
-            else if (m_nextRangeToClick < pressTimeRelativeToPerfect)
-            {
-                timing = Timing.TooLate;
-            }
-            else
-            {
-                timing = Timing.Good;
-            }
+        }
 
-            if (timing != m_previousTiming)
+        if (timing == Timing.TooLate)
+        {
+            LoseGame(timing);
+            return;
+        }
+
+        if (currentConfig.GetButtonState())
+        {
+            Debug.LogWarning($"Button {m_currentButton} pressed");
+            currentConfig.SidePanel.gameObject.SetActive(false);
+            switch (timing)
             {
-                Debug.LogWarning($"Different Timing ({timing} and {m_previousTiming})");
-                m_previousTiming = timing;
-                switch (timing)
-                {
-                    case Timing.TooEarly:
-                        Debug.LogWarning($"Applied DMX config Too Early");
-                        currentConfig.SpotTooEarlyConfiguration.ApplyConfigration(m_arduinoManager);
-                        AkSoundEngine.PostEvent("Play_button_too_early", gameObject);
-
-                        currentConfig.SidePanel.gameObject.SetActive(true);
-                        currentConfig.SidePanel.color = currentConfig.TooEarlyColor;
-                        break;
-                    case Timing.Good:
-                        Debug.LogWarning($"Applied DMX config Good");
-                        currentConfig.SpotGoodTimingConfiguration.ApplyConfigration(m_arduinoManager);
-                        AkSoundEngine.PostEvent("Play_button_good", gameObject);
-
-                        currentConfig.SidePanel.gameObject.SetActive(true);
-                        currentConfig.SidePanel.color = currentConfig.GoodColor;
-                        break;
-                    case Timing.TooLate:
-                        AkSoundEngine.PostEvent("Play_button_too_late", gameObject);
-                        currentConfig.SidePanel.gameObject.SetActive(true);
-                        currentConfig.SidePanel.color = currentConfig.TooEarlyColor;
-                        break;
-                }
-            }
-
-            if (timing == Timing.TooLate)
-            {
-                LoseGame(timing);
-                return;
-            }
-
-            if (currentConfig.GetButtonState())
-            {
-                Debug.LogWarning($"Button {m_currentButton} pressed");
-                currentConfig.SidePanel.gameObject.SetActive(false);
-                switch (timing)
-                {
-                    case Timing.TooEarly:
-                        LoseGame(timing);
-                        break;
-                    case Timing.Good:
-                        SetupNextButtonClick();
-                        break;
-                    case Timing.TooLate:
-                        LoseGame(timing);
-                        break;
-                }
+                case Timing.TooEarly:
+                    LoseGame(timing);
+                    break;
+                case Timing.Good:
+                    SetupNextButtonClick();
+                    break;
+                case Timing.TooLate:
+                    LoseGame(timing);
+                    break;
             }
         }
     }
@@ -225,7 +261,7 @@ public class GameManager : MonoBehaviour
         Debug.LogError($"You lose because you were {timing}");
         Debug.Log($"Score : {m_score}");
 
-        m_lost = true;
+        m_gameState = GameState.End;
         m_gameOverConfig.ApplyConfigration(m_arduinoManager);
         AkSoundEngine.PostEvent("Play_set_gameover", gameObject);
     }
