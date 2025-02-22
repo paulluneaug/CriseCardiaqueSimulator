@@ -16,6 +16,8 @@ public class ArduinoConnector
 
     [NonSerialized] private SerialPort m_serialPort;
     [NonSerialized] private byte[] m_buffer;
+    [NonSerialized] private bool m_open;
+
 
     public void Init()
     {
@@ -29,6 +31,7 @@ public class ArduinoConnector
 
         Debug.Log(m_serialPort.IsOpen);
         m_serialPort.Open();
+        m_open = true;
 
         Task.Factory.StartNew(AwaitDatas);
     }
@@ -36,6 +39,7 @@ public class ArduinoConnector
     public void Close()
     {
         m_serialPort.Close();
+        m_open = false;
     }
 
     public void Send(Span<byte> buffer)
@@ -48,7 +52,7 @@ public class ArduinoConnector
 
     private async Task AwaitDatas()
     {
-        while(true)
+        while(m_open)
         {
             int readBytesCount = 0;
             try
@@ -65,7 +69,7 @@ public class ArduinoConnector
                 //Debug.Log($"Recieved {readBytesCount} bytes");
                 OnMessageRecieved?.Invoke(m_buffer, readBytesCount);
             }
-            await Task.Delay(20);
+            await Task.Delay(10);
         }
     }
 }
